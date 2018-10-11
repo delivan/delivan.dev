@@ -26,7 +26,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Log By Hyuk
+            Log by Hyuk
           </Link>
         </h1>
       );
@@ -47,7 +47,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Log By Hyuk
+            Log by Hyuk
           </Link>
         </h3>
       );

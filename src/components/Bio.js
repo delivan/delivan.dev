@@ -27,7 +27,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Blog By <strong>Junghyuk Yoo</strong> who lives and works in Korea
+          Blog by <strong>Junghyuk Yoo</strong> who lives and works in Korea
           buildinig useful things. Currently I'm deeply into web technology.
         </p>
       </div>
