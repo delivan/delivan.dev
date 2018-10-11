@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Log By Hyuk',
+    author: 'Junghyuk Yoo',
+    description: 'Blog by Junghyuk Yoo',
+    siteUrl: 'https://hyuk.netlify.com',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -21,7 +21,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
             },
           },
           {
@@ -66,4 +66,4 @@ module.exports = {
       },
     },
   ],
-}
+};
