@@ -33,6 +33,12 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
+        <Disqus.CommentCount
+          shortname={disqusShortname}
+          config={disqusConfig}
+        >
+          Comments
+        </Disqus.CommentCount>
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
@@ -76,20 +82,10 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <div className="article">
-          <h1>{this.props.article.title}</h1>
-          <Disqus.CommentCount
-            shortname={disqusShortname}
-            config={disqusConfig}
-          >
-            Comments
-          </Disqus.CommentCount>
-          <p>{this.props.article.body}</p>
-          <Disqus.DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
-        </div>
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
       </Layout>
     );
   }
