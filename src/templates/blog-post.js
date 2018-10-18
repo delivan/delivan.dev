@@ -37,7 +37,6 @@ class BlogPostTemplate extends React.Component {
           shortname={disqusShortname}
           config={disqusConfig}
         >
-          Comments
         </Disqus.CommentCount>
         <h1>{post.frontmatter.title}</h1>
         <p
