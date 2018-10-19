@@ -33,11 +33,6 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <Disqus.CommentCount
-          shortname={disqusShortname}
-          config={disqusConfig}
-        >
-        </Disqus.CommentCount>
         <h1>{post.frontmatter.title}</h1>
         <p
           style={{
