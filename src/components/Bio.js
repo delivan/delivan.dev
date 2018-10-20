@@ -18,7 +18,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Junghyuk Yoo`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -27,8 +27,8 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          Blog by <strong>Junghyuk Yoo</strong> who lives and works in Korea
-          buildinig useful things. I'm deeply into web technology.
+          who lives and works in Korea building useful things. 
+          I'm deeply into web technology.
         </p>
       </div>
     );
