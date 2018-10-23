@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
     const siteDescription = post.excerpt;
     const { previous, next } = this.props.pageContext;
 
-    const disqusShortname = post.frontmatter.title;
+    const disqusShortname = 'logbyhyuk';
     const disqusConfig = {
       url: this.props.location.href,
       identifier: post.id,
