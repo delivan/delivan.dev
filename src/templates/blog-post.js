@@ -19,12 +19,14 @@ class BlogPostTemplate extends React.Component {
     const siteDescription = post.excerpt;
     const { previous, next } = this.props.pageContext;
 
-    const disqusShortname = 'logbyhyuk';
+    const disqusShortname = post.frontmatter.title;
     const disqusConfig = {
-      url: 'https://hyuk.netlify.com/',
-      identifier: 'logbyhyuk',
-      title: 'logbyhyuk',
+      url: this.props.location.href,
+      identifier: post.id,
+      title: post.frontmatter.title,
     };
+    console.log(disqusConfig)
+
 
     return (
       <Layout location={this.props.location}>
