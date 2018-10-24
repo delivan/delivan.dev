@@ -3,7 +3,7 @@ title: '[Javascript]데이터 타입의 종류와 차이점'
 date: '2018-10-09'
 ---
 
-본 포스팅은 인프런에 있는 [핵심개념을 알아보는 Javascript Flow](https://www.inflearn.com/course/%ED%95%B5%EC%8B%AC%EA%B0%9C%EB%85%90-javascript-flow/) 강좌를 듣고 복습하기 위해 작성했습니다.
+본 포스팅은 인프런에 있는 <a href="https://www.inflearn.com/course/%ED%95%B5%EC%8B%AC%EA%B0%9C%EB%85%90-javascript-flow/" target="_blank">핵심개념을 알아보는 Javascript Flow</a> 강좌를 듣고 복습하기 위해 작성했습니다.
 
 Javascript 의 데이터 타입은 아래와 같이 크게 두 가지가 있습니다.
 
