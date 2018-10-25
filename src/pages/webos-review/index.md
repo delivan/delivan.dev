@@ -53,6 +53,39 @@ WebOS 이미지를 빌드하기 위해선 Linux 머신이 필요하며 Windows�
 
 위 순서와 코드는 간략한 예시며 클린 빌드하는 방법 등 자세한 것은 역시 <a href="http://webosose.org/discover/setting/building-webos-ose/" target="_blank">홈페이지</a>를 참조해주세요.
 
+이제 빌드된 이미지를 SD카드에 Flashing할 차례입니다. 플래싱하는 건 Linux 말고도 Windows, Mac에서도 가능합니다. 여기선 Linux 기준으로 살펴보겠습니다.
+
+1. 이미지가 있는 곳으로 이동하여 .rpi-sdimg 파일을 찾아 이름 기억
+    ```bash
+    $ cd BUILD/deploy/images/raspberrypi3
+    ```
+2. SD카드의 device 이름 확인
+    ```bash
+    $ sudo fdisk -l
+    ```
+3. 플래싱
+    ```bash
+    $ sudo umount /dev/sdxn
+    $ sudo dd bs=4M if=./**.rpi-sdimg of=/dev/sdx
+    $ sudo umount /dev/sdxn
+    ```
+여기서 sd뒤에 붙는 x와 n은 device 이름마다 다르며(ex. sdb1) **.rpi-sdim 는 미리 찾아놓은 이미지 파일 이름으로 바꾸면 되겠습니다.
+
+플래싱이 완료되었으면 드디어 WebOS를 실행해 볼 준비가 다 되었습니다. 사전에 필요하다고 했던 준비물을 모조리 가져와서 다음과 같은 순서로 진행합니다.
+
+1. WebOS 이미지가 담긴 SD 카드를 빼와서 라즈베리파이에 장착
+2. 마우스, 키보드, 모니터와 LAN선을 연결
+3. 라즈베리파이에 파워를 연결(안드로이드 충전할 때 쓰는 5핀 케이블!)
+4. 부팅이 시작되고 WebOS 로고가 짠!
+5. 키보드의 Windows 키를 누르면 아래와 같이 런처가 짠!
+
+<img src="./webos_launcher.png" alt="webos_launcher" width="600" />
+
+## Hello World! 앱 만들기
+
+<img src="./hello_webos.png" alt="hello_webos" width="600" />
+
+
 ## 느낀점
 
 이번 컨트리뷰톤의 목적인 '공개SW 프로젝트에 참여보는 것' 에는 어느정도 달성했지만 실력과 시간이 부족한 탓인지 코드기여까지는 못한게 많이 아쉽고 부끄러웠습니다. 하지만 웹 개발자로서 경험하기 힘든 실제 운영체제의 소스코드와 개발방식, 오픈소스 프로젝트가 어떤 프로세스로 개발이 되는지 등을 알게된 감사한 시간들이었습니다. 멘토님들이 저같이 아무것도 모르는 학생들 챙겨주느라 고생이 많으셨던 것 같습니다..ㅎㅎ 내년에도 참여할 여건이 된다면 또 참여하고 싶고 그동안 열심히 실력을 쌓아야 겠다는 다짐으로 포스팅을 마무리 하겠습니다. 
