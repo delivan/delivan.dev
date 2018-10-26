@@ -61,6 +61,8 @@ class BlogPostTemplate extends React.Component {
             justifyContent: 'space-between',
             listStyle: 'none',
             padding: 0,
+            marginLeft: 0,
+            marginBottom: 20,
           }}
         >
           <li>
