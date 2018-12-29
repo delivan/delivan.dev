@@ -1,5 +1,5 @@
 ---
-title: '[Javascript]데이터 타입의 종류와 차이점'
+title: '[Javascript] 데이터 타입의 종류와 차이점'
 date: '2018-10-09'
 ---
 
