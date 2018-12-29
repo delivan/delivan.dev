@@ -8,6 +8,10 @@ Wordpress2016.overrideThemeStyles = () => ({
 })
 
 delete Wordpress2016.googleFonts
+Wordpress2016.headerFontFamily = ['NanumSquare', 'Merriweather', 'sans-serif']
+Wordpress2016.bodyFontFamily = ['NanumSquare', 'Merriweather', 'sans-serif']
+Wordpress2016.baseFontSize = '16px'
+
 
 const typography = new Typography(Wordpress2016)
 

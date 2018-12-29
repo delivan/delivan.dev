@@ -13,6 +13,7 @@ class Template extends React.Component {
       header = (
         <h1
           style={{
+            fontFamily: 'NanumSquare, Merriweather, sans-serif',
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
@@ -34,7 +35,7 @@ class Template extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: 'Montserrat, sans-serif',
+            fontFamily: 'NanumSquare, Merriweather, sans-serif',
             marginTop: 0,
             marginBottom: rhythm(-1),
           }}
