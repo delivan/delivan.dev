@@ -1,9 +1,3 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# junghyuk.yoo
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
-
-## Running in development
-`gatsby develop`
+My blog forked from [Gastby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog)
