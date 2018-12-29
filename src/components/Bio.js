@@ -27,8 +27,8 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          who lives and works in Korea building useful things. 
-          I'm deeply into web technology.
+          한국에서 웹 개발을 하고있는 유정혁입니다. <br />
+          자바스크립트와 피자🍕를 좋아합니다.
         </p>
       </div>
     );

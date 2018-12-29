@@ -14,8 +14,8 @@ class Template extends React.Component {
         <h1
           style={{
             fontFamily: 'NanumSquare, Merriweather, sans-serif',
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
+            ...scale(1.3),
+            marginBottom: rhythm(1.2),
             marginTop: 0,
           }}
         >
@@ -27,7 +27,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Log by Hyuk
+            안녕하세요🖐🏻
           </Link>
         </h1>
       );
@@ -48,7 +48,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Log by Hyuk
+            홈🏠
           </Link>
         </h3>
       );

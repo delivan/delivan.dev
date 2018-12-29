@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Log by Hyuk',
+    title: 'junghyuk.yoo',
     author: 'Junghyuk Yoo',
-    description: 'Blog by Junghyuk Yoo',
+    description: 'This blog is powered by gatsby',
     siteUrl: 'https://hyuk.netlify.com',
   },
   pathPrefix: '/gatsby-starter-blog',
