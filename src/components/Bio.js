@@ -13,7 +13,7 @@ class Bio extends React.Component {
       <div
         style={{
           display: 'flex',
-          marginBottom: rhythm(1.5),
+          marginBottom: '-1rem',
         }}
       >
         <img
@@ -27,8 +27,8 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          한국에서 웹 개발을 하고있는 유정혁입니다. <br />
-          자바스크립트와 피자🍕를 좋아합니다.
+          한국에서 웹 개발을 하고있는 유정혁(Delivan Yoo)입니다. <br />
+          자바스크립트와 피자🍕를 좋아라 합니다.
         </p>
       </div>
     );

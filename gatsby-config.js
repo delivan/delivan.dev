@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'junghyuk.yoo',
-    author: 'Junghyuk Yoo',
+    title: 'delivan.dev',
+    author: 'Jeonghyeok Yoo',
     description: 'This blog is powered by gatsby',
-    siteUrl: 'https://hyuk.netlify.com',
+    siteUrl: 'http://www.delivan.dev',
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -62,9 +62,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-          trackingId: "UA-111652703-2",
-          respectDNT: true,
-          exclude: ["/public/**", "/admin/**"]
+        trackingId: 'UA-111652703-2',
+        respectDNT: true,
+        exclude: ['/public/**', '/admin/**'],
       },
     },
   ],
