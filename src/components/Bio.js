@@ -17,7 +17,7 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Junghyuk Yoo`}
+          alt={`Jeonghyeok Yoo`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -26,8 +26,8 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          한국에서 웹 개발을 하고있는 유정혁(Delivan Yoo)입니다. <br />
-          자바스크립트와 피자🍕를 좋아라 합니다.
+          한국에서 웹 개발을 하고있는 유정혁(delivan)입니다. <br />
+          웹🕸과 피자🍕를 좋아라 합니다.
         </p>
       </div>
     );
