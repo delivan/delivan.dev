@@ -1,3 +1,3 @@
-# junghyuk.yoo
+# delivan.dev
 
 My blog forked from [Gastby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog).
