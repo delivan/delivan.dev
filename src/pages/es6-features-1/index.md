@@ -1,5 +1,5 @@
 ---
-title: '[Javascript] ES6: ES5와 비교해보며 배우기 - 1'
+title: '[Javascript] ES6: ES5와 비교해보며 알아보기 - 1'
 date: '2019-05-08'
 ---
 
@@ -243,5 +243,4 @@ console.log(add(1, 2, 3, 4, 5));
 
 ## 참조한 사이트
 - <a href="http://es6-features.org" target="_blank">http://es6-features.org</a>
-
-다음 장에서 계속...
+- <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference" target="_blank">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference</a>
