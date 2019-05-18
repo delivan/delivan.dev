@@ -19,7 +19,7 @@ console.log(introduction);
 
 ## Template literal - Tagged template
 - template literal을 함수로 파싱할 수 있다.
-
+- 리액트에서 유명한 styled component가 이 문법을 이용해서 만들어졌다.
 
 ```js
 // ES6
