@@ -5,7 +5,7 @@ import get from 'lodash/get';
 
 import Bio from '../components/Bio';
 import Layout from '../components/layout';
-import Disqus from 'disqus-react';
+import Utterances from '../components/utterances'
 
 import { rhythm, scale } from '../utils/typography';
 
@@ -13,6 +13,8 @@ import 'prismjs/themes/prism-tomorrow.css';
 import './blog-post.css';
 
 class BlogPostTemplate extends React.Component {
+  rootElm = React.createRef();
+
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
@@ -25,8 +27,6 @@ class BlogPostTemplate extends React.Component {
       identifier: post.id,
       title: post.frontmatter.title,
     };
-    console.log(disqusConfig)
-
 
     return (
       <Layout location={this.props.location}>
@@ -83,10 +83,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        <Disqus.DiscussionEmbed
-          shortname={disqusShortname}
-          config={disqusConfig}
-        />
+        <Utterances />
       </Layout>
     );
   }
