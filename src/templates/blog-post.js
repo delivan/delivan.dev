@@ -1,32 +1,32 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import get from 'lodash/get';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Link, graphql } from 'gatsby'
+import get from 'lodash/get'
 
-import Bio from '../components/Bio';
-import Layout from '../components/layout';
+import Bio from '../components/Bio'
+import Layout from '../components/layout'
 import Utterances from '../components/utterances'
 
-import { rhythm, scale } from '../utils/typography';
+import { rhythm, scale } from '../utils/typography'
 
-import 'prismjs/themes/prism-tomorrow.css';
-import './blog-post.css';
+import 'prismjs/themes/prism-tomorrow.css'
+import './blog-post.css'
 
 class BlogPostTemplate extends React.Component {
-  rootElm = React.createRef();
+  rootElm = React.createRef()
 
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
-    const siteDescription = post.excerpt;
-    const { previous, next } = this.props.pageContext;
+    const post = this.props.data.markdownRemark
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const siteDescription = post.excerpt
+    const { previous, next } = this.props.pageContext
 
-    const disqusShortname = 'logbyhyuk';
+    const disqusShortname = 'logbyhyuk'
     const disqusConfig = {
       url: this.props.location.href,
       identifier: post.id,
       title: post.frontmatter.title,
-    };
+    }
 
     return (
       <Layout location={this.props.location}>
@@ -35,10 +35,13 @@ class BlogPostTemplate extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
-        <h1 
+        <h1
           style={{
-            fontFamily: 'NanumSquare, Merriweather, sans-serif'
-          }}>{post.frontmatter.title}</h1>
+            fontFamily: 'NanumSquare, Merriweather, sans-serif',
+          }}
+        >
+          {post.frontmatter.title}
+        </h1>
         <p
           style={{
             ...scale(-1 / 5),
@@ -85,11 +88,11 @@ class BlogPostTemplate extends React.Component {
         </ul>
         <Utterances />
       </Layout>
-    );
+    )
   }
 }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -109,4 +112,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
