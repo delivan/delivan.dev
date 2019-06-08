@@ -5,7 +5,7 @@ import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
-import Utterances from '../components/utterances'
+import Utterances from '../components/Utterances'
 
 import { rhythm, scale } from '../utils/typography'
 
