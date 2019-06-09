@@ -1,12 +1,12 @@
 ---
-title: '[Javascript] ES6: ES5와 비교해보며 알아보기 - 2'
+title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 2'
 date: '2019-05-10'
 ---
 
 ## Template literal - Expression interpolation
 
 ```js
-// ES6
+// ES6+
 const name = 'delivan'
 const introduction = `안녕하세요 저는 ${name} 입니다.`
 console.log(introduction)
@@ -25,7 +25,7 @@ console.log(introduction)
 - 리액트에서 유명한 styled component 가 이 문법을 이용해서 만들어졌다.
 
 ```js
-// ES6
+// ES6+
 const tagFunction = (strs, arg1, arg2) => {
   return `${strs[0]}${arg1}${strs[1]}${arg2}${strs[2]}`
 }
@@ -51,7 +51,7 @@ console.log(introduction)
 ## Template literal - Raw string
 
 ```js
-// ES6
+// ES6+
 const rawString = String.raw`안녕하세요.\n 저는 ${'delivan'} 입니다.`
 console.log(rawString)
 ```
@@ -65,7 +65,7 @@ console.log(rawString)
 ## Enhanced object property - property shorthand
 
 ```js
-// ES6
+// ES6+
 const name = 'delivan'
 const age = 27
 const obj = {
@@ -89,7 +89,7 @@ console.log(obj)
 ## Enhanced object property - concise method
 
 ```js
-// ES6
+// ES6+
 const obj = {
   name: 'delivan',
   getName() {
@@ -119,7 +119,7 @@ var delivan = new obj.getName() // no error!
 ## Enhanced object property - Computed property name
 
 ```js
-// ES6
+// ES6+
 const getProperty = prop => {
   switch (prop) {
     case 'a':
@@ -159,7 +159,7 @@ obj[[getProperty('j')]: 'software engineer'];
 ## Destructing assignment - Array destructuring
 
 ```js
-// ES6
+// ES6+
 const num = [1, 2, 3]
 let [a, , b] = num
 console.log(a, b)
@@ -181,7 +181,7 @@ console.log(a, b)
 ## Destructing assignment - Object destructuring
 
 ```js
-// ES6
+// ES6+
 const obj = {
   name: 'delivan',
   age: 27,
@@ -220,7 +220,7 @@ console.log(myName, companyName, position)
 ## Destructing assignment - Default value
 
 ```js
-// ES6
+// ES6+
 const obj = {
   name: 'delivan',
 }
@@ -232,7 +232,7 @@ console.log(one, two, three)
 ```
 
 ```js
-// ES6
+// ES5
 var obj = {
   name: 'delivan',
 }
@@ -246,7 +246,8 @@ var three = num[2] === undefined ? 3 : num[2]
 console.log(one, two, three)
 ```
 
-## 참조한 사이트
+## 참조
 
 - <a href="http://es6-features.org" target="_blank">http://es6-features.org</a>
 - <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference" target="_blank">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference</a>
+- <a href="https://www.inflearn.com/course/ecmascript-6-flow" target="_blank">https://www.inflearn.com/course/ecmascript-6-flow</a>

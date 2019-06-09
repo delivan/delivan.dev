@@ -1,12 +1,12 @@
 ---
-title: '[Javascript] ES6: ES5와 비교해보며 알아보기 - 1'
+title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 1'
 date: '2019-05-08'
 ---
 
 ## Constants
 
 ```js
-// ES6
+// ES6+
 const delivan = 27
 delivan = 28 // error!
 ```
@@ -31,7 +31,7 @@ console.log(delivan) // 27
 - function scope: 함수에 의해서 생기는 변수의 유효 범위 => var
 
 ```js
-// ES6
+// ES6+
 const array = [1, 2, 3, 4, 5]
 let callbacks = []
 for (let i = 0; i < array.length; i++) {
@@ -66,7 +66,7 @@ for (i = 0; i < array.length; i++) {
 ## Block scope - function
 
 ```js
-// ES6
+// ES6+
 {
   function foo() {
     return 1
@@ -105,7 +105,7 @@ for (i = 0; i < array.length; i++) {
 - arguments, callee 가 숨겨져 있으며 invoke 해야만 값을 얻을 수 있다.(없으면 에러가 담겨있음)
 
 ```js
-// ES6
+// ES6+
 const odds = [1, 3, 5, 7, 9]
 
 const evens = odds.map(num => num + 1)
@@ -139,7 +139,7 @@ nums.forEach(function(num) {
 - this binding 을 하지 않는다.
 
 ```js
-// ES6
+// ES6+
 const obj = {
   nums: [1, 2, 3, 4, 5],
   odds: [],
@@ -181,7 +181,7 @@ console.log(obj.odds)
 ## Parameter handling - Default parameter
 
 ```js
-// ES6
+// ES6+
 const add = (x, y = 7, z = 42) => {
   return x + y + z
 }
@@ -207,7 +207,7 @@ console.log(add(1) === 50)
 - 마지막 파라미터로 한번만 나와야 한다.
 
 ```js
-// ES6
+// ES6+
 const add = (x, y, ...rest) => {
   let num = x + y
   rest.forEach(val => {
@@ -237,7 +237,7 @@ console.log(add(1, 2, 3, 4, 5))
 - 얕은 복사만을 수행한다.
 
 ```js
-// ES6
+// ES6+
 const add = (x, y, ...rest) => {
   const params = [x, y, ...rest]
   let num = 0
@@ -267,3 +267,4 @@ console.log(add(1, 2, 3, 4, 5))
 
 - <a href="http://es6-features.org" target="_blank">http://es6-features.org</a>
 - <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference" target="_blank">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference</a>
+- <a href="https://www.inflearn.com/course/ecmascript-6-flow" target="_blank">https://www.inflearn.com/course/ecmascript-6-flow</a>
