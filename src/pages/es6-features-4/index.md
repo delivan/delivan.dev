@@ -1,6 +1,6 @@
 ---
 title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 4'
-date: '2019-06-09'
+date: '2019-06-16'
 ---
 
 ## Generator - Definition, Usage
