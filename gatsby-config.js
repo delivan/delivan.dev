@@ -67,5 +67,14 @@ module.exports = {
         exclude: ['/public/**', '/admin/**'],
       },
     },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.delivan.dev',
+        sitemap: 'https://www.delivan.dev/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
   ],
 };
