@@ -135,4 +135,10 @@ Host: https://www.delivan.dev
 ```
 사실 이 정도는 자동화까진 안해도 될 듯하다.😅
 
-지금까지 사이트 맵과 robots.txt를 이용한 기본적인 검색엔진 최적화 방법, Gatsby로 만든 사이트에 적용하는 방법에 대해 알아봤다. 본인은 SEO 전문가가 아니므로 틀린 사항이나 놓친 것이 있다면 댓글로 알려주길 바란다. 다음 글에서는 색인 생성과정에 대해 좀 더 알아보고 검색에 노출되는 순위를 높이는 방법에 대해 알아보도록 하겠다.   
+지금까지 사이트 맵과 robots.txt를 이용한 기본적인 검색엔진 최적화 방법, Gatsby로 만든 사이트에 적용하는 방법에 대해 알아봤다. 본인은 SEO 전문가가 아니므로 틀린 사항이나 놓친 것이 있다면 댓글로 알려주길 바란다. 다음 글에서는 색인 생성과정에 대해 좀 더 알아보고 검색에 노출되는 순위를 높이는 방법에 대해 알아보도록 하겠다.
+
+## 참조
+
+- <a href="https://support.google.com/webmasters/answer/70897?ref_topic=3309469#long_version">https://support.google.com/webmasters/answer/70897?ref_topic=3309469#long_version</a>
+- <a href="https://extrememanual.net/10728">https://extrememanual.net/10728</a>
+- <a href="https://www.sitemaps.org/ko/protocol.html">https://www.sitemaps.org/ko/protocol.html</a>
