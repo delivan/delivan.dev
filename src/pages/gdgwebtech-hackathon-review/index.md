@@ -1,5 +1,5 @@
 ---
-title: '[회고] GDG Webtech 해커톤에서 알게된 것 (feat. 구름IDE)'
+title: 'GDG Webtech 해커톤에서 알게된 것 (feat. 구름IDE)'
 date: '2019-05-18'
 ---
 
