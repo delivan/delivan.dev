@@ -1,9 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: 'delivan.dev',
-    author: 'Jeonghyeok Yoo',
-    description: 'This blog is powered by gatsby',
-    siteUrl: 'http://www.delivan.dev',
+    title: 'delivan의 블로그',
+    author: 'delivan',
+    description: 'delivan(유정혁)의 블로그입니다. 주로 책 리뷰와 웹 개발에 관련된 글을 올립니다.',
+    siteUrl: 'https://delivan.dev',
+    social: {
+      facebook: 'profile.php?id=100023045160959',
+      instagram: 'daeng_hyuk2'
+    },
+    github: 'delivan'
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
@@ -12,6 +17,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
+      },
+    }, 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/assets`,
+        name: 'assets',
       },
     },
     {
@@ -42,13 +54,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `delivan의 블로그`,
+        short_name: `delivan.dev`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/macbook.png`,
+        icon: `assets/macbook.png`,
       },
     },
     `gatsby-plugin-offline`,

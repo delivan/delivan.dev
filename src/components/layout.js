@@ -5,7 +5,7 @@ import { rhythm, scale } from '../utils/typography'
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
+    const { location, children, title } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -27,7 +27,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            안녕하세요🖐🏻
+            {title}
           </Link>
         </h1>
       )
@@ -48,7 +48,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            홈🏠
+            {title}
           </Link>
         </h3>
       )
@@ -62,8 +62,13 @@ class Template extends React.Component {
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
         }}
       >
-        {header}
-        {children}
+        <header>{header}</header>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
       </div>
     )
   }

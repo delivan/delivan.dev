@@ -1,8 +1,8 @@
 {
   "name": "delivan.dev",
-  "description": "This blog is powered by gastby",
+  "description": "유정혁(delivan)의 블로그 입니다. 주로 책과 웹 개발에 관련된 글을 씁니다.",
   "version": "2.0.0",
-  "author": "Jeonghyeok Yoo <wjdgurdl272@gmail.com>",
+  "author": "유정혁(delivan) <wjdgurdl272@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
@@ -25,7 +25,7 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "prismjs": "^1.16.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
@@ -40,20 +40,25 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.13.0",
+    "gatsby-image": "^2.2.8",
     "gh-pages": "^1.2.0",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://delivan.dev",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "delivan",
+    "delivan.dev",
+    "blog",
+    "devlog"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/delivan/delivan.dev.git"
   },
   "scripts": {
     "dev": "gatsby develop",

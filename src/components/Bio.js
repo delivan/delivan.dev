@@ -1,37 +1,54 @@
-import React from 'react'
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
-// Import typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
+import { rhythm } from "../utils/typography"
 
-import profilePic from './profile-pic.jpg'
-import { rhythm } from '../utils/typography'
+const Bio = () => {
+  const data = useStaticQuery(graphql`
+    query BioQuery {
+      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+        childImageSharp {
+          fixed(width: 60, height: 60) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `)
 
-class Bio extends React.Component {
-  render() {
-    return (
-      <div
+  const { author } = data.site.siteMetadata
+  return (
+    <div
+      style={{
+        display: `flex`,
+        marginBottom: rhythm(2.5),
+      }}
+    >
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author}
         style={{
-          display: 'flex',
+          marginRight: rhythm(1 / 2),
+          marginBottom: 0,
+          minWidth: 50,
+          borderRadius: `100%`,
         }}
-      >
-        <img
-          src={profilePic}
-          alt={`Jeonghyeok Yoo`}
-          style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-          }}
-        />
-        <p>
-          한국에서 개발자로 살고 있는 유정혁(delivan)입니다. <br />
-          웹🕸과 책📚과 피자🍕를 좋아라 합니다.
-        </p>
-      </div>
-    )
-  }
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />
+      <p>
+        웹 개발자로 먹고 살고 있는 {author}(유정혁)이라고 합니다. <br />
+        책📚과 피자🍕를 좋아라 합니다. <br />
+      </p>
+    </div>
+  )
 }
 
 export default Bio

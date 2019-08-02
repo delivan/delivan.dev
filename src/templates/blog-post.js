@@ -29,9 +29,9 @@ class BlogPostTemplate extends React.Component {
     }
 
     return (
-      <Layout location={this.props.location}>
+      <Layout location={this.props.location} title='홈🏠'>
         <Helmet
-          htmlAttributes={{ lang: 'en' }}
+          htmlAttributes={{ lang: 'kor' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={`${post.frontmatter.title} | ${siteTitle}`}
         />
@@ -108,7 +108,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY/MM/DD")
       }
     }
   }
