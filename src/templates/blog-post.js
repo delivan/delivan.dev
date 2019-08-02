@@ -3,9 +3,9 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 
-import Bio from '../components/Bio'
+import Bio from '../components/bio'
 import Layout from '../components/layout'
-import Utterances from '../components/Utterances'
+import Utterances from '../components/utterances'
 
 import { rhythm, scale } from '../utils/typography'
 
