@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import { rhythm } from '../utils/typography'
@@ -16,7 +16,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="홈" />
+        <SEO title='홈' />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
