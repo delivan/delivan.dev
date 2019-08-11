@@ -1,5 +1,5 @@
 ---
-title: '[신뢰 이동] Show me the trust'
+title: '[신뢰 이동] SHOW ME THE TRUST'
 date: '2019-08-10'
 ---
 
