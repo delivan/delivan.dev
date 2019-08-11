@@ -136,7 +136,7 @@ Host: https://www.delivan.dev
 ```
 사실 이 정도는 자동화까진 안해도 될 듯하다.😅
 
-지금까지 sitemap.xml과 robots.txt를 이용한 기본적인 검색엔진 최적화 방법, Gatsby로 만든 사이트에 플러그인으로 이를 자동화하는 방법에 대해 알아봤다. <a href="https://delivan.dev/gatsby-blog-seo" target="_blank">다음 글</a>에서는 좀 더 구체적인 최적화 방법과 검색에 노출되는 순위를 좀 더 높이는 방법에 대해 알아보도록 하겠다.
+지금까지 sitemap.xml과 robots.txt를 이용한 기본적인 검색엔진 최적화 방법, Gatsby로 만든 사이트에 플러그인으로 이를 자동화하는 방법에 대해 알아봤다. <a href="https://delivan.dev/gatsby-blog-seo-2" target="_blank">다음 글</a>에서는 좀 더 구체적인 최적화 방법과 검색에 노출되는 순위를 좀 더 높이는 방법에 대해 알아보도록 하겠다.
 
 ## 참조
 

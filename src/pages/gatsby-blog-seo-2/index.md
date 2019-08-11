@@ -69,6 +69,7 @@ date: '2019-08-10'
 
 ## 참조
 
+- <a href="https://delivan.dev/gatsby-blog-seo-1" target="_blank">이전 글</a>
 - <a href="https://support.google.com/webmasters/answer/7451184?hl=ko" target="_blank">구글 SEO 가이드</a>
 - <a href="https://webmasters.googleblog.com/2007/09/improve-snippets-with-meta-description.html" target="_blank">Improve snippets with a meta description makeover</a>
 - <a href="http://www.openads.co.kr/nTrend/article/5238/SEO%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B5%9C%EC%A0%81%ED%99%94-9%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95" target="_blank">SEO를 위한 이미지 최적화 9가지 방법</a>
