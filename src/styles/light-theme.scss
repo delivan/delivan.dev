@@ -47,7 +47,7 @@ body.light {
     h3 {
       color: $dark-gray;
     }
-    p {
+    p:last-child {
       color: $middle-gray;
     }
     &:hover {

@@ -16,16 +16,18 @@
     margin-bottom: 4px;
   }
 
-  div {
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.7);
-    margin-bottom: 12px;
-  }
-
   p {
-    font-family: 'NanumSquare';
-    font-size: 16px;
-    line-height: 1.6;
+    &:first-of-type {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.7);
+      margin-bottom: 12px;
+    }
+
+    &:last-child {
+      font-family: 'NanumSquare';
+      font-size: 16px;
+      line-height: 1.6;
+    }
   }
 }
 
