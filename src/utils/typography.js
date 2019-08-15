@@ -1,22 +1,58 @@
 import Typography from 'typography'
-import Wordpress2016 from 'typography-theme-wordpress-2016'
+import GitHubTheme from 'typography-theme-github'
 
-Wordpress2016.overrideThemeStyles = () => ({
-  'a.gatsby-resp-image-link': {
-    boxShadow: 'none',
-  },
-})
+GitHubTheme.overrideThemeStyles = () => {
+  return {
+    a: {
+      boxShadow: `none`,
+      textDecoration: `none`,
+      color: `#0687f0`,
+    },
+    'a.gatsby-resp-image-link': {
+      boxShadow: `none`,
+      textDecoration: `none`,
+    },
 
-delete Wordpress2016.googleFonts
-Wordpress2016.headerFontFamily = ['NanumSquare', 'Merriweather', 'sans-serif']
-Wordpress2016.bodyFontFamily = ['NanumSquare', 'Merriweather', 'sans-serif']
-Wordpress2016.baseLineHeight = 1.9
-Wordpress2016.baseFontSize = '16px'
+    'a:hover': {
+      textDecoration: `none`,
+    },
 
-const typography = new Typography(Wordpress2016)
+    h1: {
+      fontWeight: 800,
+      lineHeight: 1.3,
+      fontFamily: 'Catamaran',
+    },
+
+    h2: {
+      fontWeight: 700,
+      lineHeight: 1.2,
+      marginTop: '56px',
+      marginBottom: '20px',
+      fontFamily: 'Catamaran',
+    },
+
+    ul: {
+      marginBottom: '6px',
+    },
+
+    li: {
+      marginBottom: '2px',
+    },
+
+    p: {
+      lineHeight: '30px',
+    },
+
+    blockquote: {
+      fontSize: '18px',
+    },
+  }
+}
+
+const typography = new Typography(GitHubTheme)
 
 // Hot reload typography in development.
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== `production`) {
   typography.injectStyles()
 }
 

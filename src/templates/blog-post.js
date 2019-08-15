@@ -1,98 +1,56 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
+import React, { useEffect } from 'react'
+import { graphql } from 'gatsby'
 
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import Utterances from '../components/utterances'
+import * as Elements from '../components/elements'
+import { Layout } from '../layout'
+import { Head } from '../components/head'
+import { PostTitle } from '../components/post-title'
+import { PostContainer } from '../components/post-container'
+import { SocialShare } from '../components/social-share'
+import { SponsorButton } from '../components/sponsor-button'
+import { Bio } from '../components/bio'
+import { PostNavigator } from '../components/post-navigator'
+import { Disqus } from '../components/disqus'
+import { Utterences } from '../components/utterances'
+import * as ScrollManager from '../utils/scroll'
 
-import { rhythm, scale } from '../utils/typography'
+import '../styles/code.scss'
 
-import 'prismjs/themes/prism-tomorrow.css'
-import './blog-post.css'
+export default ({ data, pageContext, location }) => {
+  useEffect(() => {
+    ScrollManager.init()
+    return () => ScrollManager.destroy()
+  }, [])
 
-class BlogPostTemplate extends React.Component {
-  rootElm = React.createRef()
+  const post = data.markdownRemark
+  const metaData = data.site.siteMetadata
+  const { title, comment, siteUrl, author, sponsor } = metaData
+  const { disqusShortName, utterances } = comment
 
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const siteDescription = post.excerpt
-    const { previous, next } = this.props.pageContext
-
-    const disqusShortname = 'logbyhyuk'
-    const disqusConfig = {
-      url: this.props.location.href,
-      identifier: post.id,
-      title: post.frontmatter.title,
-    }
-
-    return (
-      <Layout location={this.props.location} title='홈🏠'>
-        <Helmet
-          htmlAttributes={{ lang: 'kor' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
+  return (
+    <Layout location={location} title={title}>
+      <Head title={post.frontmatter.title} description={post.excerpt} />
+      <PostTitle title={post.frontmatter.title} date={post.frontmatter.date} />
+      <PostContainer html={post.html} />
+      <SocialShare title={post.frontmatter.title} author={author} />
+      {!!sponsor.buyMeACoffeeId && (
+        <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
+      )}
+      <Elements.Hr />
+      <Bio />
+      <PostNavigator pageContext={pageContext} />
+      {!!disqusShortName && (
+        <Disqus
+          post={post}
+          shortName={disqusShortName}
+          siteUrl={siteUrl}
+          slug={pageContext.slug}
         />
-        <h1
-          style={{
-            fontFamily: 'NanumSquare, Merriweather, sans-serif',
-          }}
-        >
-          {post.frontmatter.title}
-        </h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <Bio />
-
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-            marginLeft: 0,
-            marginBottom: 20,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-        <Utterances />
-      </Layout>
-    )
-  }
+      )}
+      {!!utterances && <Utterences repo={utterances} />}
+    </Layout>
+  )
 }
-
-export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -100,11 +58,19 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
+        comment {
+          disqusShortName
+          utterances
+        }
+        sponsor {
+          buyMeACoffeeId
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt
+      excerpt(pruneLength: 280)
       html
       frontmatter {
         title

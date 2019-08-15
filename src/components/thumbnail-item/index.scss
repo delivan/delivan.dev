@@ -1,0 +1,34 @@
+@import '../../styles/variables.scss';
+
+.thumbnail {
+  display: block;
+  margin-bottom: 12px;
+  padding: 4px;
+  padding-bottom: 12px;
+  box-shadow: none;
+  transition: text-shadow 0.3s, opacity 0.4s;
+  opacity: 0;
+
+  h3 {
+    font-family: 'NanumSquare';
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  div {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-family: 'NanumSquare';
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+.thumbnail.visible {
+  opacity: 1;
+}
