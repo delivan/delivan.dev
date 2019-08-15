@@ -31,6 +31,10 @@ export function Head({ description, lang, meta, keywords, title }) {
                 content: metaDescription,
               },
               {
+                property: `og:image`,
+                content: data.avatar.childImageSharp.fixed,
+              },
+              {
                 property: `og:type`,
                 content: `website`,
               },
@@ -83,6 +87,13 @@ Head.propTypes = {
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 72, height: 72) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title
