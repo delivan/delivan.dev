@@ -11,6 +11,7 @@ export function getValueFrom(storage, key) {
   if (!rawData) {
     return
   }
+
   return JSON.parse(rawData)
 }
 

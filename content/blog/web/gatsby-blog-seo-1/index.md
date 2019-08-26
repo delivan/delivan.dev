@@ -32,7 +32,7 @@ module.exports = {
     title: 'delivan.dev',
     author: 'Jeonghyeok Yoo',
     description: 'This blog is powered by gatsby',
-    siteUrl: 'https://www.delivan.dev',
+    siteUrl: 'https://delivan.dev',
   },
   plugins: [
     ...
@@ -49,23 +49,23 @@ module.exports = {
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url>
-  <loc>http://www.delivan.dev/book-is-friend-and-teacher/</loc>
+  <loc>https://delivan.dev/books/book-is-friend-and-teacher/</loc>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
-  <loc>http://www.delivan.dev/2019-first-half-review/</loc>
+  <loc>https://delivan.dev/books/2019-first-half-review/</loc>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 ...
 <url>
-  <loc>http://www.delivan.dev/deview2018-review-1/</loc>
+  <loc>https://delivan.dev/restrospect/deview2018-review-1/</loc>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
 <url>
-  <loc>http://www.delivan.dev/</loc>
+  <loc>https://delivan.dev/</loc>
   <changefreq>daily</changefreq>
   <priority>0.7</priority>
 </url>
@@ -117,15 +117,15 @@ module.exports = {
     title: 'delivan.dev',
     author: 'Jeonghyeok Yoo',
     description: 'This blog is powered by gatsby',
-    siteUrl: 'https://www.delivan.dev',
+    siteUrl: 'https://delivan.dev',
   },
   plugins: [
     ...
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.delivan.dev',
-        sitemap: 'https://www.delivan.dev/sitemap.xml',
+        host: 'https://delivan.dev',
+        sitemap: 'https://delivan.dev/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
@@ -140,8 +140,8 @@ module.exports = {
 ```
 User-agent: *
 Allow: /
-Sitemap: https://www.delivan.dev/sitemap.xml
-Host: https://www.delivan.dev
+Sitemap: https://delivan.dev/sitemap.xml
+Host: https://delivan.dev
 ```
 
 사실 이 정도는 자동화까진 안해도 될 듯하다.😅

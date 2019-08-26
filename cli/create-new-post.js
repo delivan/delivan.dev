@@ -6,6 +6,7 @@ const rr = require('recursive-readdir')
 const matter = require('gray-matter')
 const inquirer = require('inquirer')
 const log = require('signale')
+const { CATEGORY_TYPE } = require('../src/constants/enum')
 const cwd = process.cwd()
 
 const CONTENTS_DIR = '/content/blog'
@@ -22,10 +23,13 @@ const getCategories = async () => {
 
   return _.uniq(
     markdownFiles
-      .map(file => fs.readFileSync(file, UTF_8))
-      .map(str => matter(str).data.category)
-      .filter(val => !!val)
-      .map(str => str.trim().toLowerCase())
+      .map(filePath => filePath.split('/')[8])
+      .reduce((acc, cur) => {
+        if (acc.indexOf(cur) < 0) {
+          acc.push(cur)
+        }
+        return acc
+      }, [])
   )
 }
 

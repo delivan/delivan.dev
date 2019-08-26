@@ -7,7 +7,7 @@ category: '책'
 ## 이 책을 읽게 된 이유
 
 매일 출근 시간에 챙겨보는 [유튜브 채널](https://www.youtube.com/channel/UCtfGLmp6xMwvPoYpI-A5Kdg)이 있다. 이 채널에는 여러 컨텐츠가 있는데 그 중 책을 소개하고 리뷰해주는 '웅이사의 하루공부'라는 컨텐츠를 꼭 챙겨보는 편이다.
-저번에 [리뷰](https://www.delivan.dev/zero-to-one-book-review)를 올렸던 책인 Zero to One 을 읽을 때였는데, 그 날의 '웅이사의 하루공부' 영상인 이 영상이 내가 다음으로 읽을 책을 바로 정해주었다.
+저번에 [리뷰](/books/zero-to-one-book-review)를 올렸던 책인 Zero to One 을 읽을 때였는데, 그 날의 '웅이사의 하루공부' 영상인 이 영상이 내가 다음으로 읽을 책을 바로 정해주었다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5rs06HiHBbY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

@@ -23,9 +23,10 @@ function getDistance(currentPos) {
   return Dom.getDocumentHeight() - currentPos
 }
 
+
 export default ({ data, location }) => {
   const initialCount = Storage.getCount(1)
-  const initialCategory = Storage.getCategory(CATEGORY_TYPE.ALL)
+  const initialCategory = Storage.getCategory(CATEGORY_TYPE.all)
   const [count, setCount] = useState(initialCount)
   const countRef = useRef(count)
   const [category, setCategory] = useState(initialCategory)
