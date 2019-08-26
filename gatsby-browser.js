@@ -4,6 +4,7 @@ require('typeface-catamaran')
 
 // polyfill
 require('intersection-observer')
+require('@fastly/performance-observer-polyfill/polyfill')
 
 const Sentry = require('@sentry/browser')
 const metaConfig = require('./gatsby-meta-config')
