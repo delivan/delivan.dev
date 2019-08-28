@@ -6,7 +6,6 @@ const rr = require('recursive-readdir')
 const matter = require('gray-matter')
 const inquirer = require('inquirer')
 const log = require('signale')
-const { CATEGORY_TYPE } = require('../src/constants/enum')
 const cwd = process.cwd()
 
 const CONTENTS_DIR = '/content/blog'
