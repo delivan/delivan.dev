@@ -1,7 +1,7 @@
 ---
 title: '[생각이 돈이 되는 순간] 천재가 되는 방법'
 date: 2019-08-29 00:11:62
-category: books
+category: '책'
 ---
 
 <p><img src="./bulb-mindmap.jpg" alt="전구 마인드맵" /></p>
