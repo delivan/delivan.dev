@@ -1,6 +1,6 @@
 ---
-title: 'Gatsby + Netlify로 편하게 블로깅하기(feat. gatsby-starter-bee)'
-date: '2019-09-01'
+title: 'Gatsby + Netlify로 편-하게 블로깅하기(feat. gatsby-starter-bee)'
+date: '2019-09-06'
 category: '웹'
 ---
 
@@ -104,11 +104,11 @@ repository name에 새로 만들 repository 이름을 적어주고 Save & Deploy
 
 <p><img src="./netlify-example-6.png" alt="Netlify 캡쳐6"/></p>
 
-금~세 당신의 블로그가 배포되어버렸다!🤭 도메인 주소는 위에서 언급했듯이 사이트의 이름을 바꾸면 `site이름.netlify.com`으로 바꿀 수 있다. 또한 커스텀 도메인도 당연히 지원하므로 보유하고 있는 도메인이 있다면 Netlify에서 아주 쉽게 연결할 수 있다. 
+금~세 당신의 블로그가 배포되어버렸다!🤭 도메인 주소는 위에서 언급했듯이 Netlify에서 사이트의 이름을 바꾸면 `사이트이름.netlify.com`으로 자동으로 바뀌어 진다. 또한 커스텀 도메인도 당연히 지원하므로 보유하고 있는 도메인이 있다면 Netlify에서 아주 쉽게 연결할 수 있다. 
 
-또한 Netlify에 연결된 Github 주소를 찾아가보면 repository가 잘 복사된 걸 볼 수 있다. 이제 로컬에 pull 받아와서 글을 쓰거나 코드를 작성하고 다시 master 브랜치에 push하면 Netlify가 다시 빌드와 배포까지 알아서 해 줄 것이다.(너무 편-안)
+Netlify에 연결된 Github 주소를 찾아가보면 코드들이 잘 복사되서 내 repository가 된 걸 볼 수 있다. 이제 로컬에 pull 받아와서 글을 쓰거나 코드를 작성하고 커밋 후 다시 master 브랜치에 push하면 Netlify가 다시 빌드와 배포를 알아서 해 줄 것이다.(너무 편-안)
 
-이제 블로그에 글을 쓰고 가꾸는 일만 남았다. 시간을 들여 Starter의 README를 쭉 읽어보고 폴더 구조도 들여다보면서 어떻게 글을 쓰고 파일은 어디다가 놓아야하는지 꼭 찾아보면서 알아가길 바란다. 그럼 모두 해-피 블로깅!😛
+이제 블로그에 글을 쓰고 잘 가꾸는 일만 남았다! 시간을 들여 Starter의 README를 쭉 읽어보고 폴더 구조도 들여다보면서 어떻게 글을 쓰고 파일은 어디다가 놓아야하는지 꼭 찾아보면서 알아가길 바란다. 그럼 모두 해-피 블로깅!😛
 
 ## 참조
 - <a href="https://github.com/JaeYeopHan/gatsby-starter-bee" target="_blank">gatsby-starter-bee Github Repository</a>
