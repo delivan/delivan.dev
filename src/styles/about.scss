@@ -1,0 +1,10 @@
+.about {
+  & table > tbody > tr > td:first-child {
+    text-align: right;
+    width: 100px;
+  }
+
+  & h1, h2 {
+    border-bottom: none;
+  }
+}

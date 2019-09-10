@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
 import * as Lang from '../constants'
+import '../styles/about.scss';
 
 export default ({ data }) => {
   const resumes = data.allMarkdownRemark.edges
