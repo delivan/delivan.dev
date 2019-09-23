@@ -1,6 +1,6 @@
 ---
 title: '[번역] React Hooks가 Redux를 대체할 수 있냐고 물어보지 마세요'
-date: '2019-09-22'
+date: '2019-09-23'
 category: 'React'
 ---
 

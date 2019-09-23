@@ -33,7 +33,7 @@ lang: 'ko'
 - container, presentational 컴포넌트의 차이점을 알고 구분해서 사용합니다.
 - HOC, context api로 props drilling 문제를 해결할 수 있습니다.
 - redux, redux-saga를 활용한 global state management에 대한 경험이 있습니다.
-- stateful한 컴포넌트의 재사용성을 위해 hooks를 적극적으로 사용합니다.
+- stateful한 컴포넌트의 재사용성을 위해 hooks를 적극적으로 사용합니다.
 - 렌더링 최적화를 위해 memoization 등의 방법들을 알아보고 적용합니다.
 
 ### 기타
