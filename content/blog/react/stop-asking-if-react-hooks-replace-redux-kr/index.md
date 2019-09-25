@@ -40,7 +40,7 @@ Redux는 상태 관리 라이브러리다. Hooks는 최근의 React 업데이트
 
 <a href="https://reactjs.org/docs/hooks-intro.html" target="_blank">문서</a>에 따르면, React hooks는 다음 세 가지의 이유로 인해 개발되었다.
 - 클래스 컴포넌트는 로직들을 재사용하기 어렵다.
-- 구현한 Lifecycle 메소드들에 관련없는 로직들을 포함되곤 한다.
+- 구현한 Lifecycle 메소드들에 관련이 없는 로직들이 포함되곤 한다.
 - 클래스는 컴퓨터와 인간 모두에게 이해하기 어려운 개념이다.
 
 이러한 동기들 중 어떠한 것도 상태 관리와 직접적인 관련이 없다.
@@ -108,7 +108,7 @@ const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 ```
 
-넘나 귀찮은 것😢 Redux store에 접근하기 위해 컴포넌트를 Higher Order Component(HOC)로 매번 감싸는 일을 하지 않아도 된다면 얼마나 좋을까? 그런데 그것이 hooks로 가능하다. Hooks는 코드 재사용과 HOC으로 인한 "wrapper hell"을 제거하는 것에 관한 것이다. 아래에 작성된 컴포넌트는 React-Redux hooks를 사용하여 위의 예시와 똑같이 동작하는 함수 컴포넌트다.
+얼마나 귀찮은 짓인가! Redux store에 접근하기 위해 컴포넌트를 Higher Order Component(HOC)로 매번 감싸는 일을 하지 않아도 된다면 얼마나 좋을까? 그런데 그것이 hooks로 가능하다. Hooks는 코드 재사용과 HOC으로 인한 "wrapper hell"을 제거하는 것을 가능하게 한다. 아래에 작성된 컴포넌트는 React-Redux hooks를 사용하여 위의 예시와 똑같이 동작하는 함수 컴포넌트다.
 
 ```js
 import React from 'react';
@@ -136,6 +136,6 @@ export default App;
 ## React hooks와 Redux를 서로 경쟁적인 기술로 볼 필요가 없다.
 이 두 기술은 훌륭하게도 상호 보완적이다. React hooks는 "**Redux를 대체하지 않는다.**" 단지 당신의 React 앱을 새롭고 더 나은 방법으로 정돈시킬 수 있을 뿐이며, Redux를 사용한다면 더 쉽게 connect 된 컴포넌트를 작성할 수 있다.
 
-그러니 제-발 "React hooks가 Redux를 대체할 수 있나요?"라고 물어보지 말았으면 좋겠다.
+그러니 제-발 "React hooks가 Redux를 대체할 수 있나요?"라고 물어보지 않았으면 좋겠다.
 
-대신 "어떤 앱을 만드는 것이 좋을까? 상태 관리를 어떻게 하면 좋을까? Redux를 사용하는 것이 괜찮을까, 과하지 않을까? hooks를 사용하는 것이 괜찮을까 클래스 사용을 고수하는 것이 괜찮을까? 만약 Redux와 React hooks를 사용하기로 했다면 어떻게 서로가 상호보완적일 수 있을까?"와 같은 질문들을 스스로에게 하라.
+대신 "어떤 앱을 만드는 것이 좋을까? 상태 관리를 어떻게 하면 좋을까? Redux를 사용하는 것이 괜찮을까, 과하지 않을까? hooks를 사용하는 것이 괜찮을까 클래스 사용을 고수하는 것이 괜찮을까? 만약 Redux와 React hooks를 사용하기로 했다면 어떻게 서로가 상호보완적일 수 있을까?"와 같은 질문들을 스스로에게 하는 것이 더 바람직한 질문이다.
