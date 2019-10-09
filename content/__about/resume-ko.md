@@ -5,6 +5,7 @@ lang: 'ko'
 ---
 
 <div class="about">
+<a href="/" style="font-size: 30px;">🏠</a>
 
 # 유정혁(delivan)
 

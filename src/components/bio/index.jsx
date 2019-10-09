@@ -1,14 +1,14 @@
-import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import Image from 'gatsby-image'
+import React from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
+import Image from 'gatsby-image';
 
-import './index.scss'
+import './index.scss';
 
 export const Bio = () => (
   <StaticQuery
     query={bioQuery}
     render={data => {
-      const { author, social, introduction } = data.site.siteMetadata
+      const { author, social, introduction } = data.site.siteMetadata;
 
       return (
         <div className="bio">
@@ -30,19 +30,35 @@ export const Bio = () => (
                 <div className="author-introduction">{introduction}</div>
                 <p className="author-socials">
                   {social.github && (
-                    <a href={`https://github.com/${social.github}`}>GitHub</a>
-                  )}
-                  {social.medium && (
-                    <a href={`https://medium.com/${social.medium}`}>Medium</a>
+                    <a
+                      href={`https://github.com/${social.github}`}
+                      target="_blank"
+                    >
+                      GitHub
+                    </a>
                   )}
                   {social.twitter && (
-                    <a href={`https://twitter.com/${social.twitter}`}>
+                    <a
+                      href={`https://twitter.com/${social.twitter}`}
+                      target="_blank"
+                    >
                       Twitter
                     </a>
                   )}
                   {social.facebook && (
-                    <a href={`https://www.facebook.com/${social.facebook}`}>
+                    <a
+                      href={`https://www.facebook.com/${social.facebook}`}
+                      target="_blank"
+                    >
                       Facebook
+                    </a>
+                  )}
+                  {social.brunch && (
+                    <a
+                      href={`https://brunch.co.kr/${social.brunch}`}
+                      target="_blank"
+                    >
+                      Brunch
                     </a>
                   )}
                 </p>
@@ -50,10 +66,10 @@ export const Bio = () => (
             </div>
           </div>
         </div>
-      )
+      );
     }}
   />
-)
+);
 
 const bioQuery = graphql`
   query BioQuery {
@@ -71,12 +87,12 @@ const bioQuery = graphql`
         social {
           twitter
           github
-          medium
+          brunch
           facebook
         }
       }
     }
   }
-`
+`;
 
-export default Bio
+export default Bio;

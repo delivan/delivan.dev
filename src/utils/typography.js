@@ -41,8 +41,6 @@ GitHubTheme.overrideThemeStyles = () => {
 
     p: {
       lineHeight: '30px',
-      marginTop: '20px',
-      marginBottom: '20px',
     },
 
     blockquote: {
