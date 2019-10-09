@@ -1,8 +1,8 @@
 module.exports = {
   title: `delivan.dev`,
-  description: `주로 책과 웹 개발에 관련된 글을 씁니다.`,
+  description: `delivan의 블로그입니다. React와 프론트엔드 개발에 대한 글을 주로 씁니다.`,
   author: `delivan`,
-  introduction: `흔한 웹 개발자입니다. 책과 피자를 좋아라 합니다.`,
+  introduction: `배운 것을 코드와 글로 기록합니다.`,
   siteUrl: `https://delivan.dev`,
   sitemapPath: `https://delivan.dev/sitemap.xml`,
   robotsPolicy: [{ userAgent: '*', allow: '/' }],
@@ -39,4 +39,4 @@ module.exports = {
   },
   ga: 'UA-111652703-2', // Add your google analytics tranking ID
   sentryDsn: 'https://712652024de44bc7ac174bbf33e9096f@sentry.io/1530733',
-}
+};
