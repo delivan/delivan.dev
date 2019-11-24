@@ -1,5 +1,5 @@
 ---
-title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 3'
+title: 'ES6+를 ES5와 비교해보며 알아보자 - 3'
 date: '2019-06-09'
 category: 'Javascript'
 ---
@@ -10,38 +10,38 @@ category: 'Javascript'
 // ES6+
 class Person {
   constructor(name) {
-    this.name = name
+    this.name = name;
   }
   getName() {
-    return this.name
+    return this.name;
   }
   static isPerson(obj) {
-    return obj instanceof this
+    return obj instanceof this;
   }
 }
 
-const delivan = new Person('delivan')
-console.log(delivan.getName()) // delivan
-console.log(Person.isPerson(delivan)) // true
+const delivan = new Person('delivan');
+console.log(delivan.getName()); // delivan
+console.log(Person.isPerson(delivan)); // true
 ```
 
 ```js
 // ES5
 function Person(name) {
-  this.name = name
+  this.name = name;
 }
 
 Person.prototype.getName = function() {
-  return this.name
-}
+  return this.name;
+};
 
 Person.isPerson = function(obj) {
-  return obj instanceof this
-}
+  return obj instanceof this;
+};
 
-var delivan = new Person('delivan')
-console.log(delivan.getName()) // delivan
-console.log(Person.isPerson(delivan)) // true
+var delivan = new Person('delivan');
+console.log(delivan.getName()); // delivan
+console.log(Person.isPerson(delivan)); // true
 ```
 
 ### 특징
@@ -61,61 +61,61 @@ console.log(Person.isPerson(delivan)) // true
 // ES6+
 class Rectangle {
   constructor(x, y) {
-    this.x = x
-    this.y = y
+    this.x = x;
+    this.y = y;
   }
   getWidth() {
-    return this.x
+    return this.x;
   }
   getHeight() {
-    return this.y
+    return this.y;
   }
 }
 
 class Square extends Rectangle {
   constructor(x) {
-    super(x, x)
+    super(x, x);
   }
   getArea() {
-    return super.getWidth() * super.getWidth()
+    return super.getWidth() * super.getWidth();
   }
 }
 
-const square = new Square(2)
-console.log(square.getWidth()) // 2
-console.log(square.getHeight()) // 2
-console.log(square.getArea()) // 4
+const square = new Square(2);
+console.log(square.getWidth()); // 2
+console.log(square.getHeight()); // 2
+console.log(square.getArea()); // 4
 ```
 
 ```js
 // ES5
 var Rectangle = function(x, y) {
-  this.x = x
-  this.y = y
-}
+  this.x = x;
+  this.y = y;
+};
 
 Rectangle.prototype.getWidth = function() {
-  return this.x
-}
+  return this.x;
+};
 
 Rectangle.prototype.getHeight = function() {
-  return this.y
-}
+  return this.y;
+};
 
 var Square = function(x) {
-  Rectangle.call(this, x, x)
-}
+  Rectangle.call(this, x, x);
+};
 
-Square.prototype = new Rectangle()
-Square.prototype.constructor = Square
+Square.prototype = new Rectangle();
+Square.prototype.constructor = Square;
 Square.prototype.getArea = function() {
-  return this.getWidth() * this.getHeight()
-}
+  return this.getWidth() * this.getHeight();
+};
 
-var square = new Square(2)
-console.log(square.getWidth()) // 2
-console.log(square.getHeight()) // 2
-console.log(square.getArea()) // 4
+var square = new Square(2);
+console.log(square.getWidth()); // 2
+console.log(square.getHeight()); // 2
+console.log(square.getArea()); // 4
 ```
 
 ### 특징
@@ -128,30 +128,30 @@ console.log(square.getArea()) // 4
 
 ```js
 // ES6+
-const NAME = Symbol('이름')
-const AGE = Symbol('나이')
+const NAME = Symbol('이름');
+const AGE = Symbol('나이');
 const delivan = {
   [NAME]: '유정혁',
   [AGE]: 27,
-}
+};
 
-console.log(delivan[Symbol('이름')]) // undefined
+console.log(delivan[Symbol('이름')]); // undefined
 
 for (prop in delivan) {
-  console.log(delivan[prop]) // 출력 X
+  console.log(delivan[prop]); // 출력 X
 }
 
 Object.keys(delivan).forEach(key => {
-  console.log(delivan[key]) // 출력 X
-})
+  console.log(delivan[key]); // 출력 X
+});
 
 Object.getOwnPropertySymbols(delivan).forEach(key => {
-  console.log(delivan[key]) // 출력 O
-})
+  console.log(delivan[key]); // 출력 O
+});
 
 Reflect.ownKeys(delivan).forEach(key => {
-  console.log(delivan[key]) // 출력 O
-})
+  console.log(delivan[key]); // 출력 O
+});
 ```
 
 ```js
@@ -169,16 +169,16 @@ Reflect.ownKeys(delivan).forEach(key => {
 ```js
 // ES6+
 const obj = (() => {
-  const privateVariable = Symbol('private')
-  const publicVariable = Symbol.for('public')
+  const privateVariable = Symbol('private');
+  const publicVariable = Symbol.for('public');
   return {
     [privateVariable]: '외부에서 보이지만 접근하진 못함',
     [publicVariable]: "obj[Symbol.for('public')] 으로 접근 가능",
-  }
-})()
+  };
+})();
 
-console.log(obj)
-console.log(obj[Symbol.for('public')])
+console.log(obj);
+console.log(obj[Symbol.for('public')]);
 ```
 
 ```js
@@ -199,17 +199,17 @@ const zeroToFiveIterator = {
     return {
       done: this.value >= 5,
       value: this.value++,
-    }
+    };
   },
-}
+};
 
 const zeroToFive = {
   [Symbol.iterator]() {
-    return zeroToFiveIterator
+    return zeroToFiveIterator;
   },
-}
+};
 
-console.log([...zeroToFive])
+console.log([...zeroToFive]);
 ```
 
 ```js
@@ -220,22 +220,22 @@ var zeroToFiveIterator = {
     return {
       done: this.value >= 5,
       value: this.value,
-    }
+    };
   },
-}
+};
 
-var zeroToFive = []
-var obj = zeroToFiveIterator.next()
+var zeroToFive = [];
+var obj = zeroToFiveIterator.next();
 for (;;) {
-  var obj = zeroToFiveIterator.next()
+  var obj = zeroToFiveIterator.next();
   if (obj.done) {
-    break
+    break;
   } else {
-    zeroToFive.push(zeroToFiveIterator.value++)
+    zeroToFive.push(zeroToFiveIterator.value++);
   }
 }
 
-console.log(zeroToFive)
+console.log(zeroToFive);
 ```
 
 ### 특징

@@ -1,5 +1,5 @@
 ---
-title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 1'
+title: 'ES6+를 ES5와 비교해보며 알아보자 - 1'
 date: '2019-05-08'
 category: 'Javascript'
 ---
@@ -8,8 +8,8 @@ category: 'Javascript'
 
 ```js
 // ES6+
-const delivan = 27
-delivan = 28 // error!
+const delivan = 27;
+delivan = 28; // error!
 ```
 
 ```js
@@ -19,9 +19,9 @@ Object.defineProperty(typeof global === 'object' ? global : window, 'delivan', {
   enumerable: true,
   writable: false, // Here!
   configurable: false, // Here!
-})
-delivan = 28
-console.log(delivan) // 27
+});
+delivan = 28;
+console.log(delivan); // 27
 ```
 
 ## Block scope - variable
@@ -33,32 +33,32 @@ console.log(delivan) // 27
 
 ```js
 // ES6+
-const array = [1, 2, 3, 4, 5]
-let callbacks = []
+const array = [1, 2, 3, 4, 5];
+let callbacks = [];
 for (let i = 0; i < array.length; i++) {
   callbacks[i] = function() {
-    return i
-  }
+    return i;
+  };
 }
 for (let i = 0; i < array.length; i++) {
-  console.log(callbacks[i]())
+  console.log(callbacks[i]());
 }
 ```
 
 ```js
 // ES5
-var array = [1, 2, 3, 4, 5]
-var callbacks = []
-var i
+var array = [1, 2, 3, 4, 5];
+var callbacks = [];
+var i;
 for (i = 0; i < array.length; i++) {
-  ;(function(i) {
+  (function(i) {
     callbacks[i] = function() {
-      return i
-    }
-  })(i)
+      return i;
+    };
+  })(i);
 }
 for (i = 0; i < array.length; i++) {
-  console.log(callbacks[i]())
+  console.log(callbacks[i]());
 }
 ```
 
@@ -70,34 +70,34 @@ for (i = 0; i < array.length; i++) {
 // ES6+
 {
   function foo() {
-    return 1
+    return 1;
   }
-  console.log(foo())
+  console.log(foo());
   {
     function foo() {
-      return 2
+      return 2;
     }
-    console.log(foo())
+    console.log(foo());
   }
-  console.log(foo())
+  console.log(foo());
 }
 ```
 
 ```js
 // ES5
-;(function() {
+(function() {
   var foo = function() {
-    return 1
-  }
-  console.log(foo())
-  ;(function() {
+    return 1;
+  };
+  console.log(foo());
+  (function() {
     var foo = function() {
-      return 2
-    }
-    console.log(foo())
-  })()
-  console.log(foo())
-})
+      return 2;
+    };
+    console.log(foo());
+  })();
+  console.log(foo());
+});
 ```
 
 ## Arrow function - Expression, Statement body
@@ -107,32 +107,32 @@ for (i = 0; i < array.length; i++) {
 
 ```js
 // ES6+
-const odds = [1, 3, 5, 7, 9]
+const odds = [1, 3, 5, 7, 9];
 
-const evens = odds.map(num => num + 1)
-const pairs = odds.map(num => ({ odd: num, even: num + 1 }))
-const nums = odds.map((num, idx) => num - idx)
+const evens = odds.map(num => num + 1);
+const pairs = odds.map(num => ({ odd: num, even: num + 1 }));
+const nums = odds.map((num, idx) => num - idx);
 nums.forEach(num => {
-  console.log(num)
-})
+  console.log(num);
+});
 ```
 
 ```js
 // ES5
-var odds = [1, 3, 5, 7, 9]
+var odds = [1, 3, 5, 7, 9];
 
 var evens = odds.map(function(num) {
-  return num + 1
-})
+  return num + 1;
+});
 var pairs = odds.map(function(num) {
-  return { odd: num, even: num + 1 }
-})
+  return { odd: num, even: num + 1 };
+});
 var nums = odds.map(function(num, idx) {
-  return num - idx
-})
+  return num - idx;
+});
 nums.forEach(function(num) {
-  console.log(num)
-})
+  console.log(num);
+});
 ```
 
 ## Arrow function - Lexical this
@@ -147,13 +147,13 @@ const obj = {
   pushOdds() {
     this.nums.forEach(num => {
       if (num % 2 === 1) {
-        this.odds.push(num)
+        this.odds.push(num);
       }
-    })
+    });
   },
-}
-obj.pushOdds()
-console.log(obj.odds)
+};
+obj.pushOdds();
+console.log(obj.odds);
 ```
 
 ```js
@@ -162,21 +162,21 @@ var obj = {
   nums: [1, 2, 3, 4, 5],
   odds: [],
   pushOdds: function() {
-    var self = this
+    var self = this;
     this.nums.forEach(function(num) {
       if (num % 2 === 1) {
-        self.odds.push(num)
+        self.odds.push(num);
       }
-    })
+    });
     // this.nums.forEach(function(num) {
     //   if (num % 2 === 1) {
     //     this.odds.push(num);
     //   }
     // }, this);
   },
-}
-obj.pushOdds()
-console.log(obj.odds)
+};
+obj.pushOdds();
+console.log(obj.odds);
 ```
 
 ## Parameter handling - Default parameter
@@ -184,23 +184,23 @@ console.log(obj.odds)
 ```js
 // ES6+
 const add = (x, y = 7, z = 42) => {
-  return x + y + z
-}
-console.log(add(1) === 50)
+  return x + y + z;
+};
+console.log(add(1) === 50);
 ```
 
 ```js
 // ES5
 function add(x, y, z) {
   if (y === undefined) {
-    y = 7
+    y = 7;
   }
   if (z === undefined) {
-    z = 42
+    z = 42;
   }
-  return x + y + z
+  return x + y + z;
 }
-console.log(add(1) === 50)
+console.log(add(1) === 50);
 ```
 
 ## Parameter handling - Rest parameter
@@ -210,26 +210,26 @@ console.log(add(1) === 50)
 ```js
 // ES6+
 const add = (x, y, ...rest) => {
-  let num = x + y
+  let num = x + y;
   rest.forEach(val => {
-    num += val
-  })
-  return num
-}
-console.log(add(1, 2, 3, 4, 5))
+    num += val;
+  });
+  return num;
+};
+console.log(add(1, 2, 3, 4, 5));
 ```
 
 ```js
 // ES5
 function add(x, y) {
-  var num = x + y
-  var rest = Array.prototype.slice.call(arguments, 2)
+  var num = x + y;
+  var rest = Array.prototype.slice.call(arguments, 2);
   rest.forEach(function(val) {
-    num += val
-  })
-  return num
+    num += val;
+  });
+  return num;
 }
-console.log(add(1, 2, 3, 4, 5))
+console.log(add(1, 2, 3, 4, 5));
 ```
 
 ## Parameter handling - Spread operator
@@ -240,28 +240,28 @@ console.log(add(1, 2, 3, 4, 5))
 ```js
 // ES6+
 const add = (x, y, ...rest) => {
-  const params = [x, y, ...rest]
-  let num = 0
+  const params = [x, y, ...rest];
+  let num = 0;
   params.forEach(val => {
-    num += val
-  })
-  return num
-}
-console.log(add(1, 2, 3, 4, 5))
+    num += val;
+  });
+  return num;
+};
+console.log(add(1, 2, 3, 4, 5));
 ```
 
 ```js
 // ES5
 function add(x, y) {
-  var rest = Array.prototype.slice.call(arguments, 2)
-  var params = [x, y].concat(rest)
-  var num = 0
+  var rest = Array.prototype.slice.call(arguments, 2);
+  var params = [x, y].concat(rest);
+  var num = 0;
   params.forEach(function(val) {
-    num += val
-  })
-  return num
+    num += val;
+  });
+  return num;
 }
-console.log(add(1, 2, 3, 4, 5))
+console.log(add(1, 2, 3, 4, 5));
 ```
 
 ## 참조한 사이트

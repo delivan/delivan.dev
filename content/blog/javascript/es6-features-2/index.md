@@ -1,5 +1,5 @@
 ---
-title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 2'
+title: 'ES6+를 ES5와 비교해보며 알아보자 - 2'
 date: '2019-05-10'
 category: 'Javascript'
 ---
@@ -8,16 +8,16 @@ category: 'Javascript'
 
 ```js
 // ES6+
-const name = 'delivan'
-const introduction = `안녕하세요 저는 ${name} 입니다.`
-console.log(introduction)
+const name = 'delivan';
+const introduction = `안녕하세요 저는 ${name} 입니다.`;
+console.log(introduction);
 ```
 
 ```js
 // ES5
-var name = 'delivan'
-var introduction = '안녕하세요 저는 ' + name + ' 입니다.'
-console.log(introduction)
+var name = 'delivan';
+var introduction = '안녕하세요 저는 ' + name + ' 입니다.';
+console.log(introduction);
 ```
 
 ## Template literal - Tagged template
@@ -28,63 +28,63 @@ console.log(introduction)
 ```js
 // ES6+
 const tagFunction = (strs, arg1, arg2) => {
-  return `${strs[0]}${arg1}${strs[1]}${arg2}${strs[2]}`
-}
+  return `${strs[0]}${arg1}${strs[1]}${arg2}${strs[2]}`;
+};
 
-const introduction = tagFunction`내 이름은 ${'delivan'} 이고 나이는 ${27} 입니다.`
-console.log(introduction)
+const introduction = tagFunction`내 이름은 ${'delivan'} 이고 나이는 ${27} 입니다.`;
+console.log(introduction);
 ```
 
 ```js
 // ES5
 function tagFunction(strs, arg1, arg2) {
-  return strs[0] + arg1 + strs[1] + arg2 + strs[2]
+  return strs[0] + arg1 + strs[1] + arg2 + strs[2];
 }
 
 var introduction = tagFunction(
   ['내 이름은 ', ' 이고 나이는 ', ' 입니다.'],
   'delivan',
   27
-)
-console.log(introduction)
+);
+console.log(introduction);
 ```
 
 ## Template literal - Raw string
 
 ```js
 // ES6+
-const rawString = String.raw`안녕하세요.\n 저는 ${'delivan'} 입니다.`
-console.log(rawString)
+const rawString = String.raw`안녕하세요.\n 저는 ${'delivan'} 입니다.`;
+console.log(rawString);
 ```
 
 ```js
 // ES5
-var rawString = '안녕하세요.\\n 저는 delivan 입니다.'
-console.log(rawString)
+var rawString = '안녕하세요.\\n 저는 delivan 입니다.';
+console.log(rawString);
 ```
 
 ## Enhanced object property - property shorthand
 
 ```js
 // ES6+
-const name = 'delivan'
-const age = 27
+const name = 'delivan';
+const age = 27;
 const obj = {
   name,
   age,
-}
-console.log(obj)
+};
+console.log(obj);
 ```
 
 ```js
 // ES5
-var name = 'delivan'
-var age = 27
+var name = 'delivan';
+var age = 27;
 var obj = {
   name: name,
   age: age,
-}
-console.log(obj)
+};
+console.log(obj);
 ```
 
 ## Enhanced object property - concise method
@@ -94,12 +94,12 @@ console.log(obj)
 const obj = {
   name: 'delivan',
   getName() {
-    return this.name
+    return this.name;
   },
-}
+};
 
-console.log(obj.getName())
-const delivan = new obj.getName() // error!
+console.log(obj.getName());
+const delivan = new obj.getName(); // error!
 ```
 
 ```js
@@ -107,12 +107,12 @@ const delivan = new obj.getName() // error!
 var obj = {
   name: 'delivan',
   getName: function() {
-    return this.name
+    return this.name;
   },
-}
+};
 
-console.log(obj.getName())
-var delivan = new obj.getName() // no error!
+console.log(obj.getName());
+var delivan = new obj.getName(); // no error!
 ```
 
 - concise method 는 prototype 이 없어 생성자 함수로 쓸 수 없다. 즉, 함수 본연의 기능만 수행한다.
@@ -124,18 +124,18 @@ var delivan = new obj.getName() // no error!
 const getProperty = prop => {
   switch (prop) {
     case 'a':
-      return 'age'
-      break
+      return 'age';
+      break;
     case 'j':
-      return 'job'
-      break
+      return 'job';
+      break;
   }
-}
+};
 
 let obj = {
   name: 'delivan',
   [getProperty('j')]: 'software engineer',
-}
+};
 ```
 
 ```js
@@ -161,22 +161,22 @@ obj[[getProperty('j')]: 'software engineer'];
 
 ```js
 // ES6+
-const num = [1, 2, 3]
-let [a, , b] = num
-console.log(a, b)
-;[b, a] = [a, b]
-console.log(a, b)
+const num = [1, 2, 3];
+let [a, , b] = num;
+console.log(a, b);
+[b, a] = [a, b];
+console.log(a, b);
 ```
 
 ```js
-var num = [1, 2, 3]
+var num = [1, 2, 3];
 var a = num[0],
-  b = num[2]
-console.log(a, b)
-var tmp = a
-a = b
-b = tmp
-console.log(a, b)
+  b = num[2];
+console.log(a, b);
+var tmp = a;
+a = b;
+b = tmp;
+console.log(a, b);
 ```
 
 ## Destructing assignment - Object destructuring
@@ -191,13 +191,13 @@ const obj = {
     location: 'pangyo',
     position: 'engineer',
   },
-}
+};
 
 const {
   name: myName,
   job: { company: companyName, position },
-} = obj
-console.log(myName, companyName, position)
+} = obj;
+console.log(myName, companyName, position);
 ```
 
 ```js
@@ -210,12 +210,12 @@ var obj = {
     location: 'pangyo',
     position: 'engineer',
   },
-}
+};
 
-var myName = obj.name
-var companyName = obj.job.company
-var position = obj.job.position
-console.log(myName, companyName, position)
+var myName = obj.name;
+var companyName = obj.job.company;
+var position = obj.job.position;
+console.log(myName, companyName, position);
 ```
 
 ## Destructing assignment - Default value
@@ -224,27 +224,27 @@ console.log(myName, companyName, position)
 // ES6+
 const obj = {
   name: 'delivan',
-}
-const num = [1, 2]
-const { name, age = 27 } = obj
-console.log(name, age)
-const [one, two, three = 3] = num
-console.log(one, two, three)
+};
+const num = [1, 2];
+const { name, age = 27 } = obj;
+console.log(name, age);
+const [one, two, three = 3] = num;
+console.log(one, two, three);
 ```
 
 ```js
 // ES5
 var obj = {
   name: 'delivan',
-}
-var num = [1, 2]
-var name = obj.name
-var age = obj.age === undefined ? 27 : obj.age
-console.log(name, age)
-var one = num[0]
-var two = num[1]
-var three = num[2] === undefined ? 3 : num[2]
-console.log(one, two, three)
+};
+var num = [1, 2];
+var name = obj.name;
+var age = obj.age === undefined ? 27 : obj.age;
+console.log(name, age);
+var one = num[0];
+var two = num[1];
+var three = num[2] === undefined ? 3 : num[2];
+console.log(one, two, three);
 ```
 
 ## 참조

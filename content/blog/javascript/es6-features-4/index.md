@@ -1,5 +1,5 @@
 ---
-title: '[Javascript] ES6+를 ES5와 비교해보며 알아보자 - 4'
+title: 'ES6+를 ES5와 비교해보며 알아보자 - 4'
 date: '2019-06-16'
 category: 'Javascript'
 ---
@@ -10,21 +10,21 @@ category: 'Javascript'
 // ES6+
 function* range(start, end, step) {
   while (start < end) {
-    yield start
-    start += step
+    yield start;
+    start += step;
   }
 }
 
-const ranger = range(0, 5, 1)
-console.log(ranger.next())
-console.log(ranger.next())
-console.log(ranger.next())
-console.log(ranger.next())
-console.log(ranger.next())
-console.log(ranger.next())
+const ranger = range(0, 5, 1);
+console.log(ranger.next());
+console.log(ranger.next());
+console.log(ranger.next());
+console.log(ranger.next());
+console.log(ranger.next());
+console.log(ranger.next());
 
 for (let i of range(0, 10, 2)) {
-  console.log(i) // 0, 2, 4, 6, 8
+  console.log(i); // 0, 2, 4, 6, 8
 }
 ```
 
@@ -63,12 +63,12 @@ const zeroToFiveIterator = {
   value: 0,
   *[Symbol.iterator]() {
     while (this.value < 5) {
-      yield this.value++
+      yield this.value++;
     }
   },
-}
+};
 
-console.log([...zeroToFive])
+console.log([...zeroToFive]);
 ```
 
 ```js
@@ -79,22 +79,22 @@ var zeroToFiveIterator = {
     return {
       done: this.value >= 5,
       value: this.value,
-    }
+    };
   },
-}
+};
 
-var zeroToFive = []
-var obj = zeroToFiveIterator.next()
+var zeroToFive = [];
+var obj = zeroToFiveIterator.next();
 for (;;) {
-  var obj = zeroToFiveIterator.next()
+  var obj = zeroToFiveIterator.next();
   if (obj.done) {
-    break
+    break;
   } else {
-    zeroToFive.push(zeroToFiveIterator.value++)
+    zeroToFive.push(zeroToFiveIterator.value++);
   }
 }
 
-console.log(zeroToFive)
+console.log(zeroToFive);
 ```
 
 ### 특징
@@ -110,19 +110,19 @@ const promiseTest = param =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (param === true) {
-        resolve('성공')
+        resolve('성공');
       } else {
-        reject(new Error('실패'))
+        reject(new Error('실패'));
       }
-    }, 3000)
-  })
+    }, 3000);
+  });
 
-const statusAndValue1 = promiseTest(true)
-console.log(statusAndValue1) // pending 상태
-setTimeout(() => console.log(statusAndValue1), 3000) // resolved 상태, value는 "성공"
-const statusAndValue2 = promiseTest(false)
-console.log(statusAndValue2) // pending 상태
-setTimeout(() => console.log(statusAndValue2), 3000) // rejected 상태, value는 에러메세지
+const statusAndValue1 = promiseTest(true);
+console.log(statusAndValue1); // pending 상태
+setTimeout(() => console.log(statusAndValue1), 3000); // resolved 상태, value는 "성공"
+const statusAndValue2 = promiseTest(false);
+console.log(statusAndValue2); // pending 상태
+setTimeout(() => console.log(statusAndValue2), 3000); // rejected 상태, value는 에러메세지
 ```
 
 ```js
@@ -131,44 +131,44 @@ var resolve = function(value) {
   return {
     status: 'resolved',
     value: value,
-  }
-}
+  };
+};
 var reject = function(value) {
   return {
     status: 'rejected',
     value: value,
-  }
-}
+  };
+};
 
 function promiseTest(param, timeout, then) {
   setTimeout(function() {
-    then(param)
-  }, timeout)
+    then(param);
+  }, timeout);
 
   return {
     status: 'pending',
     value: undefined,
-  }
+  };
 }
 
 var statusAndValue1 = promiseTest(true, 3000, function(param) {
   if (param === true) {
-    statusAndValue1 = resolve('성공')
+    statusAndValue1 = resolve('성공');
   } else {
-    statusAndValue1 = reject(new Error('실패'))
+    statusAndValue1 = reject(new Error('실패'));
   }
-})
-console.log(statusAndValue1) // pending 상태
-setTimeout(() => console.log(statusAndValue1), 3000) // resolved 상태, value는 "성공"
+});
+console.log(statusAndValue1); // pending 상태
+setTimeout(() => console.log(statusAndValue1), 3000); // resolved 상태, value는 "성공"
 var statusAndValue2 = promiseTest(false, 3000, function(param) {
   if (param === true) {
-    statusAndValue2 = resolve('성공')
+    statusAndValue2 = resolve('성공');
   } else {
-    statusAndValue2 = reject(new Error('실패'))
+    statusAndValue2 = reject(new Error('실패'));
   }
-})
-console.log(statusAndValue2) // pending 상태
-setTimeout(() => console.log(statusAndValue2), 3000) // rejected 상태, value는 에러메세지
+});
+console.log(statusAndValue2); // pending 상태
+setTimeout(() => console.log(statusAndValue2), 3000); // rejected 상태, value는 에러메세지
 ```
 
 ### 특징
@@ -183,84 +183,84 @@ setTimeout(() => console.log(statusAndValue2), 3000) // rejected 상태, value�
 // ES6+
 new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('1')
-  }, 1000)
+    resolve('1');
+  }, 1000);
 })
   .then(res => {
-    console.log(res)
-    return '2'
+    console.log(res);
+    return '2';
   })
   .then(res => {
-    console.log(res)
+    console.log(res);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve('3')
-      }, 1000)
-    })
+        resolve('3');
+      }, 1000);
+    });
   })
   .then(res => {
-    console.log(res)
+    console.log(res);
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        reject('4')
-      }, 1000)
-    })
+        reject('4');
+      }, 1000);
+    });
   })
   .then(res => {
-    console.log(res)
+    console.log(res);
   })
   .catch(err => {
-    console.error(err)
-    return new Error('5')
+    console.error(err);
+    return new Error('5');
   })
   .then(res => {
-    console.log(res)
-    throw new Error('6')
+    console.log(res);
+    throw new Error('6');
   })
   .then(res => {
-    console.log(res)
+    console.log(res);
   })
   .catch(err => {
-    console.error(err)
-  })
+    console.error(err);
+  });
 ```
 
 ```js
 // ES5
 function resolve(value, then) {
-  then(value)
+  then(value);
 }
 
 function reject(value, then) {
-  then(value)
+  then(value);
 }
 
-;(function() {
+(function() {
   setTimeout(function() {
     resolve('1', function(res) {
-      console.log(res)
+      console.log(res);
       resolve('2', function(res) {
-        console.log(res)
+        console.log(res);
         setTimeout(function() {
           resolve('3', function(res) {
-            console.log(res)
+            console.log(res);
             setTimeout(function() {
               reject('4', function(err) {
-                console.error(err)
+                console.error(err);
                 resolve(new Error('5'), function(res) {
-                  console.log(res)
+                  console.log(res);
                   reject(new Error('6'), function(err) {
-                    console.error(err)
-                  })
-                })
-              })
-            }, 1000)
-          })
-        }, 1000)
-      })
-    })
-  }, 1000)
-})()
+                    console.error(err);
+                  });
+                });
+              });
+            }, 1000);
+          });
+        }, 1000);
+      });
+    });
+  }, 1000);
+})();
 ```
 
 ### 특징
@@ -274,39 +274,39 @@ function reject(value, then) {
 
 ```js
 // ES6+
-const nameSet = new Set()
+const nameSet = new Set();
 nameSet
   .add('delivan')
   .add('foo')
-  .add('delivan')
-console.log(nameSet.size === 2)
-console.log(nameSet.has('foo'))
+  .add('delivan');
+console.log(nameSet.size === 2);
+console.log(nameSet.has('foo'));
 for (let name of nameSet.values()) {
-  console.log(name)
+  console.log(name);
 }
-nameSet.delete('foo')
-console.log(nameSet)
-nameSet.clear()
-console.log(nameSet)
+nameSet.delete('foo');
+console.log(nameSet);
+nameSet.clear();
+console.log(nameSet);
 ```
 
 ```js
 // ES5
-var nameSet = {}
-nameSet['delivan'] = true
-nameSet['foo'] = true
-nameSet['delivan'] = true
-console.log(Object.keys(nameSet).length === 2)
-console.log(nameSet['foo'])
+var nameSet = {};
+nameSet['delivan'] = true;
+nameSet['foo'] = true;
+nameSet['delivan'] = true;
+console.log(Object.keys(nameSet).length === 2);
+console.log(nameSet['foo']);
 for (var name in nameSet) {
   if (nameSet.hasOwnProperty(name)) {
-    console.log(name)
+    console.log(name);
   }
 }
-delete nameSet['foo']
-console.log(nameSet)
-nameSet = {}
-console.log(nameSet)
+delete nameSet['foo'];
+console.log(nameSet);
+nameSet = {};
+console.log(nameSet);
 ```
 
 ### 특징
@@ -321,18 +321,18 @@ console.log(nameSet)
 
 ```js
 // ES6+
-let obj = { name: 'delivan' } // 객체에 대한 참조 카운트가 1이 됌
-let obj2 = obj // 참조 카운트 2
+let obj = { name: 'delivan' }; // 객체에 대한 참조 카운트가 1이 됌
+let obj2 = obj; // 참조 카운트 2
 
-const weakset = new WeakSet()
-weakset.add(obj) // weakset에 { name: 'delivan' }을 추가했지만 여전히 참조카운트는 2
-console.log(weakset.has(obj))
-weakset.delete(obj)
-weakset.add(obj2)
-console.log(weakset.has(obj2))
+const weakset = new WeakSet();
+weakset.add(obj); // weakset에 { name: 'delivan' }을 추가했지만 여전히 참조카운트는 2
+console.log(weakset.has(obj));
+weakset.delete(obj);
+weakset.add(obj2);
+console.log(weakset.has(obj2));
 
-obj2 = null // 참조카운트 1
-obj = null // 참조카운트가 0이 되면서 가비지 컬렉터의 대상이 되고 weakset이 갖고있던 { name: 'delivan' }은 언젠간 없게 된다.
+obj2 = null; // 참조카운트 1
+obj = null; // 참조카운트가 0이 되면서 가비지 컬렉터의 대상이 되고 weakset이 갖고있던 { name: 'delivan' }은 언젠간 없게 된다.
 ```
 
 ```js
@@ -350,47 +350,47 @@ obj = null // 참조카운트가 0이 되면서 가비지 컬렉터의 대상이
 
 ```js
 // ES6+
-const delivanMap = new Map()
-const dummyObj = {}
+const delivanMap = new Map();
+const dummyObj = {};
 delivanMap
   .set('name', 'delivan')
   .set('age', 27)
   .set(123, 12345)
-  .set(dummyObj, 'dummyObj')
-console.log(delivanMap)
-console.log(delivanMap.size)
-console.log(delivanMap.get(dummyObj))
-console.log(delivanMap.has(123))
-console.log(delivanMap.delete(dummyObj))
+  .set(dummyObj, 'dummyObj');
+console.log(delivanMap);
+console.log(delivanMap.size);
+console.log(delivanMap.get(dummyObj));
+console.log(delivanMap.has(123));
+console.log(delivanMap.delete(dummyObj));
 for (let key of delivanMap.keys()) {
-  console.log(key)
+  console.log(key);
 }
 for (let value of delivanMap.values()) {
-  console.log(value)
+  console.log(value);
 }
 for (let [key, value] of delivanMap.entries()) {
-  console.log(key, value)
+  console.log(key, value);
 }
-delivanMap.clear()
-console.log(delivanMap)
+delivanMap.clear();
+console.log(delivanMap);
 ```
 
 ```js
 // ES5
-var delivanLikeMap = {}
-delivanLikeMap['name'] = 'delivan'
-delivanLikeMap['age'] = 27
-delivanLikeMap[123] = 12345 // key가 string으로 변환 됌
+var delivanLikeMap = {};
+delivanLikeMap['name'] = 'delivan';
+delivanLikeMap['age'] = 27;
+delivanLikeMap[123] = 12345; // key가 string으로 변환 됌
 // obj는 key로 넣을 순 없음
-console.log(delivanLikeMap)
-console.log(Object.keys(delivanLikeMap).length)
-console.log(!!delivanLikeMap[123])
+console.log(delivanLikeMap);
+console.log(Object.keys(delivanLikeMap).length);
+console.log(!!delivanLikeMap[123]);
 for (let key in delivanLikeMap) {
-  console.log(typeof key)
+  console.log(typeof key);
 }
 // value, entries에 대응하는 메소드가 없음
-delivanLikeMap = {}
-console.log(delivanLikeMap)
+delivanLikeMap = {};
+console.log(delivanLikeMap);
 ```
 
 ### 특징
@@ -406,19 +406,19 @@ console.log(delivanLikeMap)
 
 ```js
 // ES6+
-let obj = { name: 'delivan' } // 객체에 대한 참조 카운트가 1이 됌
-let obj2 = obj // 참조 카운트 2
+let obj = { name: 'delivan' }; // 객체에 대한 참조 카운트가 1이 됌
+let obj2 = obj; // 참조 카운트 2
 
-const weakmap = new WeakMap()
-weakmap.set(obj, 27) // weakset에 { name: 'delivan' }을 추가했지만 여전히 참조카운트는 2
-console.log(weakmap.has(obj))
-console.log(weakmap.get(obj))
-console.log(weakmap.delete(obj))
-weakmap.set(obj2, 27)
-console.log(weakmap.has(obj2))
+const weakmap = new WeakMap();
+weakmap.set(obj, 27); // weakset에 { name: 'delivan' }을 추가했지만 여전히 참조카운트는 2
+console.log(weakmap.has(obj));
+console.log(weakmap.get(obj));
+console.log(weakmap.delete(obj));
+weakmap.set(obj2, 27);
+console.log(weakmap.has(obj2));
 
-obj2 = null // 참조카운트 1
-obj = null // 참조카운트가 0이 되면서 가비지 컬렉터의 대상이 되고 weakset이 갖고있던 { name: 'delivan' }은 언젠간 없게 된다.
+obj2 = null; // 참조카운트 1
+obj = null; // 참조카운트가 0이 되면서 가비지 컬렉터의 대상이 되고 weakset이 갖고있던 { name: 'delivan' }은 언젠간 없게 된다.
 ```
 
 ### 특징
