@@ -38,5 +38,4 @@ module.exports = {
     facebookAppId: '2281943828568674', // Add facebookAppId for using facebook share feature v3.2
   },
   ga: 'UA-111652703-2', // Add your google analytics tranking ID
-  sentryDsn: 'https://712652024de44bc7ac174bbf33e9096f@sentry.io/1530733',
 };

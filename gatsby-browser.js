@@ -1,13 +1,12 @@
 // custom typefaces
-require('typeface-noto-sans-kr')
-require('typeface-catamaran')
+require('typeface-noto-sans-kr');
+require('typeface-catamaran');
 
 // polyfill
-require('intersection-observer')
-require('@fastly/performance-observer-polyfill/polyfill')
+require('intersection-observer');
+require('@fastly/performance-observer-polyfill/polyfill');
 
-const Sentry = require('@sentry/browser')
-const metaConfig = require('./gatsby-meta-config')
+const metaConfig = require('./gatsby-meta-config');
 
 exports.onInitialClientRender = () => {
   if (metaConfig.share.facebookAppId) {
@@ -16,25 +15,19 @@ exports.onInitialClientRender = () => {
         appId: metaConfig.share.facebookAppId,
         xfbml: true,
         version: 'v3.2',
-      })
-      FB.AppEvents.logPageView()
-    }
-    ;(function(d, s, id) {
+      });
+      FB.AppEvents.logPageView();
+    };
+    (function(d, s, id) {
       var js,
-        fjs = d.getElementsByTagName(s)[0]
+        fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
-        return
+        return;
       }
-      js = d.createElement(s)
-      js.id = id
-      js.src = 'https://connect.facebook.net/en_US/sdk.js'
-      fjs.parentNode.insertBefore(js, fjs)
-    })(document, 'script', 'facebook-jssdk')
+      js = d.createElement(s);
+      js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'facebook-jssdk');
   }
-
-  if (metaConfig.sentryDsn) {
-    Sentry.init({
-      dsn: metaConfig.sentryDsn,
-    })
-  }
-}
+};

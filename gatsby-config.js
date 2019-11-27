@@ -108,5 +108,14 @@ module.exports = {
         policy: metaConfig.robotsPolicy,
       },
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://712652024de44bc7ac174bbf33e9096f@sentry.io/1530733',
+        environment: process.env.NODE_ENV,
+        enabled: (() =>
+          ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
   ],
 };
