@@ -1,19 +1,18 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from 'react';
 
-import { ThumbnailContainer } from '../thumbnail-container'
-import { ThumbnailItem } from '../thumbnail-item'
-import { CATEGORY_TYPE } from '../../constants'
+import { ThumbnailContainer } from '../thumbnail-container';
+import { ThumbnailItem } from '../thumbnail-item';
+import categoryMap from '../../constants/category';
 
 export const Contents = ({ posts, countOfInitialPost, count, category }) => {
   const refinedPosts = useMemo(() =>
     posts
       .filter(
         ({ node }) =>
-          category === CATEGORY_TYPE.all ||
-          node.frontmatter.category === category
+          category === categoryMap.all || node.frontmatter.category === category
       )
       .slice(0, count * countOfInitialPost)
-  )
+  );
 
   return (
     <ThumbnailContainer>
@@ -21,5 +20,5 @@ export const Contents = ({ posts, countOfInitialPost, count, category }) => {
         <ThumbnailItem node={node} key={`item_${index}`} />
       ))}
     </ThumbnailContainer>
-  )
-}
+  );
+};

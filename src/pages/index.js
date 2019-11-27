@@ -1,76 +1,76 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { graphql } from 'gatsby'
-import _ from 'lodash'
+import React, { useState, useEffect, useRef } from 'react';
+import { graphql } from 'gatsby';
+import _ from 'lodash';
 
-import { Layout } from '../layout'
-import { Bio } from '../components/bio'
-import { Head } from '../components/head'
-import { Category } from '../components/category'
-import { Contents } from '../components/contents'
+import { Layout } from '../layout';
+import { Bio } from '../components/bio';
+import { Head } from '../components/head';
+import { Category } from '../components/category';
+import { Contents } from '../components/contents';
 
-import * as ScrollManager from '../utils/scroll'
-import * as Storage from '../utils/storage'
-import * as IOManager from '../utils/visible'
-import * as EventManager from '../utils/event-manager'
-import * as Dom from '../utils/dom'
+import * as ScrollManager from '../utils/scroll';
+import * as Storage from '../utils/storage';
+import * as IOManager from '../utils/visible';
+import * as EventManager from '../utils/event-manager';
+import * as Dom from '../utils/dom';
 
-import { HOME_TITLE, CATEGORY_TYPE } from '../constants'
+import { HOME_TITLE } from '../constants';
+import categoryMap from '../constants/category';
 
-const DEST_POS = 316
-const BASE_LINE = 80
+const DEST_POS = 316;
+const BASE_LINE = 80;
 
 function getDistance(currentPos) {
-  return Dom.getDocumentHeight() - currentPos
+  return Dom.getDocumentHeight() - currentPos;
 }
 
-
 export default ({ data, location }) => {
-  const initialCount = Storage.getCount(1)
-  const initialCategory = Storage.getCategory(CATEGORY_TYPE.all)
-  const [count, setCount] = useState(initialCount)
-  const countRef = useRef(count)
-  const [category, setCategory] = useState(initialCategory)
+  const initialCount = Storage.getCount(1);
+  const initialCategory = Storage.getCategory(categoryMap.all);
+  const [count, setCount] = useState(initialCount);
+  const countRef = useRef(count);
+  const [category, setCategory] = useState(initialCategory);
 
-  const { siteMetadata } = data.site
-  const { countOfInitialPost } = siteMetadata.configs
-  const posts = data.allMarkdownRemark.edges
-  const categories = _.uniq(posts.map(({ node }) => node.frontmatter.category))
+  const { siteMetadata } = data.site;
+  const { countOfInitialPost } = siteMetadata.configs;
+  const posts = data.allMarkdownRemark.edges;
+  const categories = _.uniq(posts.map(({ node }) => node.frontmatter.category));
 
   useEffect(() => {
-    window.addEventListener(`scroll`, onScroll, { passive: false })
-    IOManager.init()
-    ScrollManager.init()
+    window.addEventListener(`scroll`, onScroll, { passive: false });
+    IOManager.init();
+    ScrollManager.init();
 
     return () => {
-      window.removeEventListener(`scroll`, onScroll, { passive: false })
-      IOManager.destroy()
-      ScrollManager.destroy()
-    }
-  }, [])
+      window.removeEventListener(`scroll`, onScroll, { passive: false });
+      IOManager.destroy();
+      ScrollManager.destroy();
+    };
+  }, []);
 
   useEffect(() => {
-    countRef.current = count
-    IOManager.refreshObserver()
-    Storage.setCount(count)
-    Storage.setCategory(category)
-  })
+    countRef.current = count;
+    IOManager.refreshObserver();
+    Storage.setCount(count);
+    Storage.setCategory(category);
+  });
 
   const selectCategory = category => {
-    setCategory(category)
-    ScrollManager.go(DEST_POS)
-  }
+    setCategory(category);
+    ScrollManager.go(DEST_POS);
+  };
 
   const onScroll = () => {
-    const currentPos = window.scrollY + window.innerHeight
-    const isTriggerPos = () => getDistance(currentPos) < BASE_LINE
+    const currentPos = window.scrollY + window.innerHeight;
+    const isTriggerPos = () => getDistance(currentPos) < BASE_LINE;
     const doesNeedMore = () =>
-      posts.length > countRef.current * countOfInitialPost
+      posts.length > countRef.current * countOfInitialPost;
 
     return EventManager.toFit(() => setCount(prev => prev + 1), {
       dismissCondition: () => !isTriggerPos(),
       triggerCondition: () => isTriggerPos() && doesNeedMore(),
-    })()
-  }
+    })();
+  };
 
   return (
     <Layout location={location} title={siteMetadata.title}>
@@ -88,8 +88,8 @@ export default ({ data, location }) => {
         category={category}
       />
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query {
@@ -120,4 +120,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
