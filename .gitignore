@@ -6,3 +6,4 @@ public
 .cache/
 yarn.lock
 src/untracked/
+archive/

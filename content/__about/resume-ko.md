@@ -1,6 +1,6 @@
 ---
 title: 'about'
-date: '2019-09-09'
+date: '2020-04-01'
 lang: 'ko'
 ---
 
@@ -9,92 +9,69 @@ lang: 'ko'
 
 # 유정혁(delivan)
 
-안녕하세요!🖐 웹 개발자로 일하고 있는 유정혁(delivan)이라고 합니다. 효율적인 코드 구조 설계와 직관적인 UI/UX 개발에 대해 관심이 많습니다. 배우는 것을 좋아하고 효율적으로 익히는 방법에 대해 고민하고 실행으로 옮겨 봅니다. 각자의 경험과 의견을 공유하고 자유롭게 토론할 수 있는 문화를 지향합니다.
-
-|            |                            |
-| :--------: | -------------------------- |
-| **Github** | https://github.com/delivan |
-| **E-mail** | wjdgurdl272@gmail.com      |
-
-## 🛠 사용 기술
-
-### HTML, CSS
-
-- 기본적인 DOM handling(input data, event handling)에 대해 알고 있습니다.
-- 기본적인 layout 방법(float, flex, grid)에 대해 알고 있습니다.
-- semantic markup과 SEO의 관계를 이해하고 있습니다.
-- BEM 방법론과 Sass에 대한 경험이 있습니다.
-- 브라우저 별 대응에 대한 경험이 있습니다.
-
-### Javascript
-
-- ES5와 ES6 이후의 문법에 익숙합니다.
-- this, prototype, closure의 개념을 알고 활용할 수 있습니다.
-- promise, generator로 비동기 코드를 작성할 수 있습니다.
-- 기본적인 DOM api에 대해 알고 있습니다.
-- 불변성을 위한 라이브러리를 다룰 줄 압니다.
-- Nodejs(express) 환경에서의 서버(api) 개발도 익숙합니다.
-
-### React
-
-- state, props의 의미와 용도를 알고 Life cycle api를 적절한 상황에 쓸 수 있습니다.
-- container, presentational 컴포넌트의 차이점을 알고 구분해서 사용합니다.
-- HOC, context api로 prop drilling 문제를 해결할 수 있습니다.
-- redux, redux-saga를 이용한 상태 관리 경험이 있습니다.
-- stateful한 컴포넌트의 재사용성을 위해 hooks를 적극적으로 사용합니다.
-- 렌더링 최적화가 필요할 때 memoization을 적용할 수 있습니다.
-
-### 기타
-
-- git, github, git flow에 익숙합니다.
-- mongoDB(mongoose)의 기본적인 모듈에 대한 이해와 경험이 있습니다.
-- webpack으로 번들링하는 과정, 기본적인 옵션들의 의미, code splitting의 필요성과 적용 방법에 대해 알고 있습니다.
-- jest를 활용한 유닛테스트 경험이 있습니다.
-- socket.io를 이용하여 소켓 통신을 구현할 수 있습니다.
-- typescript, react native를 적극적으로 학습하고 있습니다.
+안녕하세요!🖐 풀스택 웹 개발자로 일하고 있는 유정혁(delivan)이라고 합니다. 매일 책을 읽고 글을 쓰며 배운 것을 현실에 적용하려고 노력합니다. 최근에는 UX, 그로스 엔지니어링에 관심이 많습니다.
 
 ## 🏢 경력
 
-### 구름 (goorm)
-
-- 기간 : 18.09 ~ 현재
-- 포지션 : 웹 풀스택 개발자
-- 설명 : 개발팀의 인턴으로 시작하여 구름 IDE와 구름 EDU 웹 사이트의 전반적인 유지보수와 새로운 기능들을 개발했습니다.
-- 프로젝트 :
-  - 어드민 페이지
-    - 기술 스택
-      - ES6+, Sass, Next.js, Redux, Redux-saga, Express, Webpack, Mongoose, Redis, Jest
-    - 참여한 일
-      - 구름 EDU에서 만든 문제를 복사하는 UI, API 개발
-  - <a href="https://edu.goorm.io" target="_blank">**구름 EDU**</a>
-    - 기술 스택
-      - ES6+, React, jQuery, ejs, Express, Sass, Bootstrap, Webpack, Mongoose, Redis, Socket.io, Jest
-    - 참여한 일
-      - 공지사항 페이지 UI, API 개발
-      - 커스텀 채널 메인페이지 UI 컴포넌트 개발
-      - <a href="https://koreacodefair.kr" target="_blank">한국코드페어</a> 웹 사이트 전체 UI, API 개발
-  - <a href="https://ide.goorm.io" target="_blank">**구름 IDE**</a>
-    - 기술 스택
-      - ES5, jQuery, ejs, Express, Mongoose, Redis, Socket.io, Docker
-    - 참여한 일
-      - IDE 컨테이너 생성 로직을 브라우저단에서 서버단으로 옮기는 작업
-      - IDE 내에서 만든 웹 앱을 AWS Elastic Beanstalk, Heroku로 배포하는 기능 구현
+### 구름(goorm)
+- 기간
+    - 18.09 ~ 현재
+- 포지션 
+    - 웹 풀스택 개발자
+- 설명
+    - 구름의 서비스 전반에 걸쳐서 웹 풀스택 개발을 해왔습니다. 최근에는 구름EDU 서비스의 B2C 성장을 위해 개발자, 디자이너, 콘텐츠 매니저로 구성된 TF 조직를 이끌며 유의미한 KPI를 정의하고 이를 달성하기 위한 액션 플랜을 세워 빠르게 개발로 적용하는 일을 하고 있습니다. 이전에 없던 A/B 테스트 환경을 구축하고, 마테크 툴을 주도적으로 도입, 활용함으로써 고객이 서비스에서 어떤 행동을 하는지 데이터를 모으고, 이를 토대로 우리가 어떤 액션을 취하는 것이 고객 경험 개선과 서비스의 성장에 도움이 되는지를 알려고 노력했습니다. 또한 잘 알려진 목표 관리 시스템인 OKR을, 제가 이끈 TF 조직을 포함하여 사내 전반에 적용하고 방향을 잡는 것에 기여했습니다. 
+- 참여 서비스: 
+    - <a href="https://edu.goorm.io" target="_blank">**구름 EDU**</a>
+      - 기간
+          - 19.01 ~ 현재
+      - 기술 스택
+          - ES6+, React, jQuery, ejs, Express, Webpack, Sass, Bootstrap, Storybook,  Mongoose, Redis, Socket.io, Jest
+      - 활용 도구 및 서비스
+          - Github, Trello, Notion, Slack, ClickUp, GA, Google Optimize, Amplitude
+      - 참여한 일
+          - 사이트 전반에 걸쳐서 UI, API 개발 및 테스트 코드 작성
+          - <a href="https://koreacodefair.kr" target="_blank">한국코드페어</a> 웹 사이트 전체 UI, API 개발 및 배포
+          - 20.01 부터 B2C 서비스 성장을 위한 TF 조직을 리드
+          - Google Analytics 활용하여 유의미한 지표 정의 및 디자인, 개발, 마케팅 의사 결정에 활용, Amplitude 연동(최근에 연동을 진행해서 의사 결정에 활용하는 것까지 진행하지 못함)
+          - Google Optimize로 A/B 테스트 환경 구축 및 가설 검증
+    - 사내 어드민 페이지
+        - 기간
+            - 1개월
+        - 기술 스택
+            - ES6+, React, Next.js, Redux, Redux-saga, Webpack, Sass, Bootstrap, Mongoose, Redis, Jest
+        - 활용 도구 및 서비스
+            - Github, Trello, Notion, Slack
+        - 참여한 일
+            - 구름 EDU에서 만든 문제를 복사하는 UI, API 개발 및 테스트 코드 작성
+            - Redux, Redux-saga와 ducks 패턴을 익히는 목적으로 짧게 참여
+    - <a href="https://ide.goorm.io" target="_blank">**구름 IDE**</a>
+        - 기간
+            - 18.09 ~ 18.12
+        - 기술 스택
+            - ES5, jQuery, ejs, Express, Mongoose, Redis, Socket.io, Docker
+        - 활용 도구 및 서비스
+            - Github, Trello, Dooray
+        - 참여한 일
+            - Docker 컨테이너 생성 로직을 브라우저단에서 서버단으로 옮기는 작업
+            - 구름IDE 내에서 만든 웹 앱을 AWS Elastic Beanstalk, Heroku로 배포하는 기능 구현
 
 ## 🎓 학력
 
-|            |                                                                                                                                                                                           |
-| :--------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **학교명** | 명지대학교                                                                                                                                                                                |
-|  **기간**  | 12.03 ~ 19.02                                                                                                                                                                             |
-|  **전공**  | 컴퓨터공학                                                                                                                                                                                |
-|  **설명**  | 자료구조, 알고리즘, 컴퓨터 네트워크, 컴퓨터 아키텍처, 객체지향 프로그래밍, 웹 프로그래밍, 컴퓨터 보안 등에서 준수한 성적을 받았으며 4학년 1학기에 웹 프로그래밍 수업 조교로 일하였습니다. |
+|         |                                                                                                              |
+| :-----: | ------------------------------------------------------------------------------------------------------------ |
+| **학교명** | 명지대학교                                                                                                        |
+| **기간**  | 12.03 ~ 19.02                                                                                                |
+| **전공**  | 컴퓨터공학                                                                                                        |
+| **설명**  | 자료구조, 알고리즘, 컴퓨터 네트워크, 컴퓨터 아키텍처, 객체지향 프로그래밍, 웹 프로그래밍, 컴퓨터 보안 등에서 준수한 성적을 받았으며 4학년 1학기에 웹 프로그래밍 수업 조교로 일하였습니다. |
 
-## 🏃‍♂️ 활동
+## 💌 웹 사이트 및 이메일
 
-|            |                                                                                                   |
-| :--------: | ------------------------------------------------------------------------------------------------- |
-| **활동명** | <a href="https://www.facebook.com/groups/375431516259701" target="_blank">글또(글쓰는 또라이)</a> |
-|  **기간**  | 19.07 ~ 현재                                                                                      |
-|  **설명**  | 개발 관련 글을 2주마다 하나씩 꼭 쓰고 블로그에 올려 서로 피드백을 주고받는 활동입니다.            |
+|            |                                         |
+| :--------: | --------------------------------------- |
+|  **깃허브**   | https://github.com/delivan              |
+|  **페이스북**  | https://www.facebook.com/jeonghyeok.yoo |
+| **개인 블로그** | https://delivan.dev                     |
+|  **브런치**   | https://brunch.co.kr/@delivan           |
+|  **이메일**   | wjdgurdl272@gmail.com                   |
 
 </div>
